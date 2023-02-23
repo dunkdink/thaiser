@@ -32,11 +32,11 @@ const Navbar = ({ toggle }) => {
               <NavLinks to="tools">เครื่องมือและAPI</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="login">เข้าสู่ระบบ</NavLinks>
+              <NavLinks to="/signin">เข้าสู่ระบบ</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="/signup">ลงทะเบียน</NavBtnLink>
+            <NavBtnLink to="/signin">ลงทะเบียน</NavBtnLink>
           </NavBtn>
         </NavbarContainer>
       </Nav>

@@ -1,5 +1,39 @@
 export const homeObjOne = {
+  id: "home",
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  topLine: "การจําแนกอารมณ์จากเสียงพูดภาษาไทย",
+  headline: "Classifying Emotion of Thai-Human Voice",
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  buttonLabel: "Get Started",
+  imgStart: false,
+  img: require('../../images/svg-1.svg').default,
+  alt: "emotions",
+  dark: true,
+  primary: true,
+  darkText: true,
+};
+
+export const homeObjTwo = {
   id: "classify-emotions",
+  lightBg: false,
+  lightText: true,
+  lightTextDesc: true,
+  topLine: "การจําแนกอารมณ์จากเสียงพูดภาษาไทย",
+  headline: "Classifying Emotion of Thai-Human Voice",
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  buttonLabel: "Get Started",
+  imgStart: true,
+  img: require('../../images/svg-2.svg').default,
+  alt: "emotions",
+  dark: true,
+  primary: true,
+  darkText: false,
+};
+
+export const homeObjThree = {
+  id: "tools",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
@@ -14,3 +48,4 @@ export const homeObjOne = {
   primary: true,
   darkText: true,
 };
+

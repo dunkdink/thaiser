@@ -21,7 +21,7 @@ function Sidebar({ isOpen, toggle }) {
           <SidebarLink to="/">หน้าหลัก</SidebarLink>
           <SidebarLink to="classify-emotions">จำแนกอารมณ์</SidebarLink>
           <SidebarLink to="tools">เครื่องมือและAPI</SidebarLink>
-          <SidebarLink to="login">เข้าสู่ระบบ</SidebarLink>
+          <SidebarLink to="/signin">เข้าสู่ระบบ</SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signup">ลงทะเบียน</SidebarRoute>

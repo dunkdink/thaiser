@@ -54,7 +54,7 @@ export const Form = styled.form`
   z-index: 1;
   display: grid;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 10px 32px;
 
   @media screen and (max-width: 400px) {
     padding: 32px 32px;

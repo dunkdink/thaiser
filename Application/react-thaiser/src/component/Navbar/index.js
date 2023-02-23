@@ -86,7 +86,7 @@ const Navbar = ({ toggle }) => {
             </NavMenu>
             <NavBtn>
               <NavBtnLink2 to="/signin">เข้าสู่ระบบ</NavBtnLink2>
-              <NavBtnLink to="/signin">ลงทะเบียน</NavBtnLink>
+              <NavBtnLink to="/signup">ลงทะเบียน</NavBtnLink>
             </NavBtn>
           </NavbarContainer>
         </Nav>

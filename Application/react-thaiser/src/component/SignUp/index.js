@@ -11,6 +11,7 @@ import {
     FormInput,
     FormButton,
     Text,
+    LabelLinks
   } from "./SignupElements";
 
 function SignUp() {
@@ -18,7 +19,7 @@ function SignUp() {
     <>
     <Container>
         <FormWrap>
-          <Icon to="/">Thai SER</Icon>
+          <Icon to="/">Thai <span>SER</span></Icon>
           <FormContent>
             <Form action="#">
               <FormH1>ลงทะเบียนตอนนี้เลย!</FormH1>
@@ -31,8 +32,9 @@ function SignUp() {
               <FormInput type="password" required />
               <FormLabel htmlFor="for">ยืนยันรหัสผ่าน</FormLabel>
               <FormInput type="confirm password" required />
-              <FormButton type="submit">Sign up</FormButton>
+              <FormButton type="submit">ลงชื่อเข้าใช้งาน</FormButton>
               <Text>มีบัญชีอยู่แล้ว?</Text>
+              <LabelLinks to="/signin">เข้าสู่ระบบ</LabelLinks>
             </Form>
           </FormContent>
         </FormWrap>

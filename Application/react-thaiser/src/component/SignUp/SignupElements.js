@@ -2,59 +2,62 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  min-height: 692px;
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  top: 0;
+  bottom: 0;
   z-index: 0;
   overflow: hidden;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
+  min-height: 692px;
 `;
 
 export const FormWrap = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 
   @media screen and (max-width: 400px) {
     height: 80%;
   }
 `;
+
 export const Icon = styled(Link)`
-  margin-top: 32px;
   text-decoration: none;
-  color: #29282D;
-  font-weight: 700;
+  color: #29282d;
   font-size: 32px;
+  font-weight: 700;
+  margin-top: 32px;
+
+  span {
+    color: #ED7966;
+  }
+
   @media screen and (max-width: 480px) {
-    margin-left: 16px;
     margin-top: 8px;
+    margin-left: 16px;
   }
 `;
 
 export const FormContent = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  @media screen and (max-width: 480px) {
-    padding: 10px;
-  }
+  height: 100%;
 `;
 
 export const Form = styled.form`
-  background: #E5E5E5;
-  max-width: 400px;
-  height: auto;
-  width: 550px;
-  z-index: 1;
+  background: #e5e5e5;
   display: grid;
   margin: 0 auto;
   padding: 10px 32px;
+  max-width: 400px;
+  width: 550px;
+  height: auto;
+  border-radius: 40px;
+  z-index: 1;
 
   @media screen and (max-width: 400px) {
     padding: 32px 32px;
@@ -62,35 +65,37 @@ export const Form = styled.form`
 `;
 
 export const FormH1 = styled.h1`
-  margin-bottom: 10px;
-  color: #29282D;
   font-size: 24px;
   font-weight: 700;
+  color: #29282d;
+  margin-bottom: 10px;
   text-align: center;
 `;
 
 export const FormH2 = styled.h2`
-  margin-bottom: 40px;
-  color: #29282D;
   font-size: 20px;
   font-weight: 400;
+  color: #29282d;
+  margin-bottom: 40px;
   text-align: center;
 `;
 
 export const FormLabel = styled.label`
-  margin-bottom: 8px;
   font-size: 14px;
-  color: #29282D;
+  color: #29282d;
+  margin-bottom: 8px;
 `;
+
 export const FormInput = styled.input`
-  padding: 16px 16px;
+  padding: 16px;
   margin-bottom: 32px;
   border: none;
   border-radius: 40px;
 `;
+
 export const FormButton = styled.button`
-  background: #2E307A;
-  padding: 16px 0px;
+  background: #2e307a;
+  padding: 16px 0;
   border: none;
   border-radius: 40px;
   color: #fff;
@@ -99,8 +104,23 @@ export const FormButton = styled.button`
 `;
 
 export const Text = styled.span`
-  text-align: center;
-  margin-top: 24px;
-  color: #ED7966;
   font-size: 14px;
+  color: #ed7966;
+  margin-top: 24px;
+  text-align: center;
+`;
+
+export const LabelLinks = styled(Link)`
+  display: inline-block;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 1rem;
+  height: 100%;
+  color: #000;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 3px solid #ed7966;
+  }
 `;

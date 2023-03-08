@@ -38,6 +38,10 @@ export const NavLogo = styled(LinkR)`
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+
+  span {
+    color: #ED7966;
+  }
 `;
 
 export const MobileIcon = styled.div`

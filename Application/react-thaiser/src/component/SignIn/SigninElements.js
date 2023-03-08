@@ -29,6 +29,11 @@ export const Icon = styled(Link)`
   color: #29282D;
   font-weight: 700;
   font-size: 32px;
+
+  span {
+    color: #ED7966;
+  }
+
   @media screen and (max-width: 480px) {
     margin-left: 16px;
     margin-top: 8px;
@@ -103,4 +108,18 @@ export const Text = styled.span`
   margin-top: 24px;
   color: #ED7966;
   font-size: 14px;
+`;
+export const LabelLinks = styled(Link)`
+  color: #000;
+  display: inline-block;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 3px solid #ed7966;
+  }
 `;

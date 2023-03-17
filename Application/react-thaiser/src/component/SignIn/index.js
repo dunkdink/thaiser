@@ -1,5 +1,5 @@
-import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
+import useAuth from "../../hooks/useAuth";
 import {
   Container,
   FormWrap,
@@ -25,28 +25,35 @@ function SignIn() {
   //   })
   // }
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { onSignIn, loading, message } = useAuth();
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const user = await onSignIn(email, password);
+  };
+
   return (
     <>
       <Container>
         <FormWrap>
           <Icon to="/">Thai <span>SER</span></Icon>
           <FormContent>
-            <Form action="#">
+            <Form onSubmit={onSubmit}>
               <FormH1>เข้าสู่ระบบ</FormH1>
               <FormH2>เข้าสู่ระบบเพื่อเข้าใช้งาน</FormH2>
-              <FormLabel htmlFor="for">อีเมล</FormLabel>
-              <FormInput type="email" required />
+              <FormLabel htmlFor="for">user</FormLabel>
+              <FormInput type="text" required onChange={(e)=>setEmail(e.target.value)}/>
               <FormLabel htmlFor="for">รหัสผ่าน</FormLabel>
-              <FormInput type="password" required />
+              <FormInput type="password" required onChange={(e)=>setPassword(e.target.value)} />
               <FormButton type="submit">เข้าสู่ระบบ</FormButton>
-              
               <Text>ยังไม่มีบัญชีเพื่อใช้งาน ?</Text> 
               <LabelLinks to="/signup">ลงชื่อเข้าใช้งาน</LabelLinks>
             </Form>
             {/* <FormButton type="" onClick={signIn}>โง่ๆ</FormButton> */}
           </FormContent>
         </FormWrap>
-        
       </Container>
     </>
   );

@@ -3,7 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: ${({scrollNav}) => (scrollNav ? '#fff' : 'transparent')};
+  background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")};
   height: 80px;
   display: flex;
   justify-content: center;
@@ -40,14 +40,14 @@ export const NavLogo = styled(LinkR)`
   text-decoration: none;
 
   span {
-    color: #ED7966;
+    color: #ed7966;
   }
 `;
 
 export const MobileIcon = styled.div`
-    display:none;
+  display: none;
 
-    @media screen and (max-width: 768px) { 
+  @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 0;
@@ -57,8 +57,6 @@ export const MobileIcon = styled.div`
     cursor: pointer;
     color: #2e307a;
   }
- 
-  
 `;
 export const NavMenu = styled.ul`
   display: flex;
@@ -88,6 +86,22 @@ export const NavLinks = styled(LinkS)`
   }
 `;
 
+export const NavLink2 = styled(LinkR)`
+  color: #000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  span {
+    color: #ed7966;
+    margin-left: 10px;
+  }
+  &.active {
+    border-bottom: 3px solid #ed7966;
+  }
+`;
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
@@ -97,7 +111,7 @@ export const NavBtn = styled.nav`
 `;
 
 export const NavBtnLink = styled(LinkR)`
-  margin:5px;
+  margin: 5px;
   border-radius: 50px;
   background: #ed7966;
   white-space: nowrap;
@@ -113,12 +127,12 @@ export const NavBtnLink = styled(LinkR)`
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color:#010606;
+    color: #010606;
   }
 `;
 
 export const NavBtnLink2 = styled(LinkR)`
-  margin:5px;
+  margin: 5px;
   border-radius: 50px;
   white-space: nowrap;
   padding: 10px 22px;
@@ -133,6 +147,47 @@ export const NavBtnLink2 = styled(LinkR)`
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color:#010606;
+    color: #010606;
+  }
+`;
+
+export const DropdownMenu = styled.ul`
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  position: absolute;
+  top: 4.5rem;
+  right: 4rem;
+  width: 250px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #fff;
+  list-style: none;
+  border:1px solid gray;
+`;
+
+
+
+
+export const DropdownItem = styled.li`
+  padding: 10px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: #666;
+  }
+`;
+
+export const NavProfile = styled.div`
+  color: #000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  span {
+    color: #ed7966;
+    margin-left: 10px;
+  }
+  &.active {
+    border-bottom: 3px solid #ed7966;
   }
 `;

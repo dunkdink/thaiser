@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
-
+import { UserContext } from "../../contexts/UserContext";
+import useAuth from "../../hooks/useAuth";
 import {
   Nav,
   NavbarContainer,
@@ -11,13 +12,28 @@ import {
   NavMenu,
   NavItem,
   NavLinks,
+  NavLink2,
   NavBtn,
   NavBtnLink,
-  NavBtnLink2
+  NavBtnLink2,
+  DropdownMenu,
+  DropdownItem,
+  NavProfile,
 } from "./NavbarElements";
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const { user } = useContext(UserContext);
+  const { onLogout } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -84,10 +100,24 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
             </NavMenu>
-            <NavBtn>
-              <NavBtnLink2 to="/signin">เข้าสู่ระบบ</NavBtnLink2>
-              <NavBtnLink to="/signup">ลงทะเบียน</NavBtnLink>
-            </NavBtn>
+            {user ? (
+              <NavBtn>
+                  <NavProfile onClick={toggleMenu}>Hi {user.name}</NavProfile>
+                  <DropdownMenu isOpen={isOpen}>
+                    <DropdownItem>{user.name}</DropdownItem>
+                    <DropdownItem>Option 2</DropdownItem>
+                    <DropdownItem>Option 3</DropdownItem>
+                  </DropdownMenu>
+                  {isOpen && <div onClick={closeMenu}></div>}
+                
+                <NavLink2 onClick={onLogout}>logout</NavLink2>
+              </NavBtn>
+            ) : (
+              <NavBtn>
+                <NavBtnLink2 to="/signin">เข้าสู่ระบบ</NavBtnLink2>
+                <NavBtnLink to="/signup">ลงทะเบียน</NavBtnLink>
+              </NavBtn>
+            )}
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>

@@ -1,22 +1,43 @@
-import React from 'react';
-import './App.css';
-import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
-import Home from './pages';
-import SignInPage from './pages/signin';
-import SignUpPage from './pages/signup';
-import ClassifyPage from './pages/classify';
-
+import { useState, useEffect } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages";
+import SignInPage from "./pages/signin";
+import SignUpPage from "./pages/signup";
+import ClassifyPage from "./pages/classify";
+import httpClient from "./utils/httpClient";
+import { UserContext } from "./contexts/UserContext";
 
 function App() {
+  const token = localStorage.getItem("token");
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    if (token) {
+      httpClient
+        .post(`/validateToken/?token=${token}`)
+        .then((res) => {
+
+          setUser(res.data);
+        })
+        .catch((err) => {
+          localStorage.removeItem("token");
+          console.log(err);
+        });
+    }
+  }, [token]);
+
   return (
-    <Router>
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/signin" component={SignInPage} exact />
-        <Route path="/signup" component={SignUpPage} exact />
-        <Route path="/classify" component={ClassifyPage} exact />
-      </Switch>
-    </Router>
+    <UserContext.Provider value={{ user, setUser }}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/signin" element={<SignInPage/>} />
+          <Route path="/signup" element={<SignUpPage/>} />
+          <Route path="/classify" element={<ClassifyPage/>} />
+        </Routes>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

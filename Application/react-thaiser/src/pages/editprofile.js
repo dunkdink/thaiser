@@ -1,14 +1,13 @@
 import React from "react";
-
 import Navbar from "../component/Navbar";
-import UploadFile from "../component/UploadFile";
-function ClassifyPage() {
+import EditProfile from "../component/EditProfile";
+function editprofile() {
   return (
     <>
       <Navbar isHome={false}/>
-      <UploadFile/>
+      <EditProfile />
     </>
   );
 }
 
-export default ClassifyPage;
+export default editprofile;

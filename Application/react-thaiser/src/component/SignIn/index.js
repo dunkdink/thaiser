@@ -51,7 +51,6 @@ function SignIn() {
               <Text>ยังไม่มีบัญชีเพื่อใช้งาน ?</Text> 
               <LabelLinks to="/signup">ลงชื่อเข้าใช้งาน</LabelLinks>
             </Form>
-            {/* <FormButton type="" onClick={signIn}>โง่ๆ</FormButton> */}
           </FormContent>
         </FormWrap>
       </Container>

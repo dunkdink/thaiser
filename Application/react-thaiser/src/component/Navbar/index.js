@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { FaBars } from "react-icons/fa";
+import { FaBars,FaRegUserCircle,FaRegSmile } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 import { UserContext } from "../../contexts/UserContext";
@@ -21,11 +21,12 @@ import {
   NavProfile,
 } from "./NavbarElements";
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle,isHome }) => {
   const [scrollNav, setScrollNav] = useState(false);
   const { user } = useContext(UserContext);
   const { onLogout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -58,11 +59,12 @@ const Navbar = ({ toggle }) => {
           <NavbarContainer>
             <NavLogo to="/" onClick={toggleHome}>
               Thai<span>SER</span>
+              <FaRegSmile size={'2rem'}/>
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
-            <NavMenu>
+            {isHome &&<NavMenu>
               <NavItem>
                 <NavLinks
                   to="home"
@@ -99,18 +101,23 @@ const Navbar = ({ toggle }) => {
                   เครื่องมือและAPI
                 </NavLinks>
               </NavItem>
-            </NavMenu>
+            </NavMenu>}
             {user ? (
               <NavBtn>
-                  <NavProfile onClick={toggleMenu}>Hi {user.name}</NavProfile>
-                  <DropdownMenu isOpen={isOpen}>
-                    <DropdownItem>{user.name}</DropdownItem>
-                    <DropdownItem>Option 2</DropdownItem>
-                    <DropdownItem>Option 3</DropdownItem>
-                  </DropdownMenu>
-                  {isOpen && <div onClick={closeMenu}></div>}
-                
-                <NavLink2 onClick={onLogout}>logout</NavLink2>
+                <NavProfile onClick={toggleMenu}>
+                  <FaRegUserCircle size={'1.5rem'}/>
+                  <span>{user.name}</span>
+                </NavProfile>
+                <DropdownMenu isOpen={isOpen}>
+                  <span>{user.name}</span>
+                  <DropdownItem to="/editprofile">
+                    บัญชีของฉัน
+                  </DropdownItem>
+                  <DropdownItem onClick={onLogout} to="/">
+                    ออกจากระบบ
+                  </DropdownItem>
+                </DropdownMenu>
+                {isOpen && <div onClick={closeMenu}></div>}
               </NavBtn>
             ) : (
               <NavBtn>

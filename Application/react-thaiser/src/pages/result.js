@@ -1,14 +1,13 @@
 import React from "react";
-
+import Result from "../component/Result";
 import Navbar from "../component/Navbar";
-import UploadFile from "../component/UploadFile";
-function ClassifyPage() {
+function ResultPage() {
   return (
     <>
       <Navbar isHome={false}/>
-      <UploadFile/>
+      <Result />
     </>
   );
 }
 
-export default ClassifyPage;
+export default ResultPage;

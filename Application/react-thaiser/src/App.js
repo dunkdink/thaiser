@@ -5,6 +5,9 @@ import Home from "./pages";
 import SignInPage from "./pages/signin";
 import SignUpPage from "./pages/signup";
 import ClassifyPage from "./pages/classify";
+import EditProfilePage from "./pages/editprofile";
+import HistoryPage from "./pages/history";
+import ResultPage from "./pages/result";
 import httpClient from "./utils/httpClient";
 import { UserContext } from "./contexts/UserContext";
 
@@ -35,6 +38,9 @@ function App() {
           <Route path="/signin" element={<SignInPage/>} />
           <Route path="/signup" element={<SignUpPage/>} />
           <Route path="/classify" element={<ClassifyPage/>} />
+          <Route path="/editprofile" element={<EditProfilePage/>} />
+          <Route path="/result" element={<ResultPage/>} />
+          <Route path="/history" element={<HistoryPage/>} />
         </Routes>
       </Router>
     </UserContext.Provider>

@@ -1,28 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
-  FormBox,
-  FormH1,
-  Img,
-  FormLabel,
-  FormInput,
-  DropFileInput
+  Title,
+  DropFileDropzone,
+  DropFileProgressBar,
+  DropFileBtn,
+  TitleWarp,
+  DragWarp,
+  DragContent,
 } from "./DropFileElements";
-import { ImageConfig } from "../../config/ImageConfig";
-import uploadImg from "../../assets/cloud-upload-regular-240.png";
-
+import useUpload  from "../../hooks/useUpload";
+import PopupProcessCard from "../PopupProcess";
 function DropFile() {
+  const {file,filename,progress,handleUpload,onFileChange,setFilename,setFile} = useUpload();
+  const [isOpenUpload, setIsOpenUpload] = useState(false);
+
+  const handleUploadClick = () => {
+    setIsOpenUpload(true);
+  };
+
+  const handleUploadClose = () => {
+    setIsOpenUpload(false);
+  };
+  
   return (
     <>
       <Container>
-        <FormBox>
-          <FormH1>DropFiles</FormH1>
-          <DropFileInput>
-            <Img src={uploadImg} alt="" />
-            <FormLabel>ลากและวางที่นี่</FormLabel>
-            <FormInput type="file" value="" />
-          </DropFileInput>
-        </FormBox>
+        {file && <PopupProcessCard onClose={handleUploadClose} filename={filename} progress={progress} handleUpload={handleUpload}/>}
+        {!file && (
+          <DropFileDropzone
+            onDrop={(acceptedFiles) => {
+              setFile(acceptedFiles[0]);
+              setFilename(acceptedFiles[0].name);
+            }}
+          >
+            {({ getRootProps, getInputProps }) => (
+              <DragWarp {...getRootProps()}>
+                <input {...getInputProps()} />
+                <DragContent>
+                  <DropFileBtn>อัพโหลดเสียง</DropFileBtn>
+                  <p>หรือ</p>
+                  <DropFileBtn>เริ่มการบันทึก</DropFileBtn>
+                </DragContent>
+              </DragWarp>
+            )}
+          </DropFileDropzone>
+        )}
+        <TitleWarp>
+          <p>ลากและวางที่นี่</p>
+        </TitleWarp>
       </Container>
     </>
   );

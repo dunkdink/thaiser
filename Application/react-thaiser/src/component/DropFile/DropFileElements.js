@@ -1,62 +1,95 @@
 import styled from "styled-components";
+import Dropzone from "react-dropzone";
+import ProgressBar from "react-progressbar";
 
 export const Container = styled.div`
-  background-color: var(--body-bg);
-  color: var(--txt-color);
-  font-weight: 400;
-  line-height: 1.5;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100vh;
-  padding-top: 100px;
-`;
-
-export const FormBox = styled.div`
-  background-color: #E5E5E5;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-`;
-
-export const FormH1 = styled.h1`
-  margin-bottom: 10px;
-  color: #29282d;
-  font-size: 24px;
-  font-weight: 700;
-  text-align: center;
-`;
-
-export const DropFileInput = styled.div`
-  position: relative;
-  width: 400px;
-  height: 200px;
-  border: 2px dashed #000;
-  border-radius: 20px;
-
-  display: flex;
+  display:flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  background-color: var(--input-bg);
+  height: 300px;
+  width: 320px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
 `;
 
-export const Img = styled.img`
-    width: 50px;
-    margin-right: 20px;
-`
-export const FormLabel = styled.label`
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #29282D;
+export const Title = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 `;
 
-export const FormInput = styled.input`
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+export const DropFileDropzone = styled(Dropzone)`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  p {
+    font-size: 16px;
+    color: #333;
+  }
+`;
+
+export const DropFileProgressBar = styled(ProgressBar)`
+  height: auto;
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+
+  div {
     height: 100%;
-    cursor: pointer;
-`
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: width 0.2s ease-in-out;
+  }
+`;
+
+export const DropFileBtn = styled.button`
+  margin-bottom: 15px;
+  border-radius: 50px;
+  background: #2e307a;
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  width: 200px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ed7966;
+  }
+`;
+
+export const TitleWarp = styled.div`
+  color: #fff;
+  font-size: 16px;
+  background: #ed7966;
+  width: 320px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
+`;
+
+export const DragWarp = styled.div`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+`;
+
+export const DragContent = styled.div`
+
+`;

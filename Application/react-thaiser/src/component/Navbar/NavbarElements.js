@@ -3,7 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? "#fff" : "transparent")};
+  background: ${({ scrollNav }) => (scrollNav ? "#fff" : "#fff")};
   height: 80px;
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 0;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
@@ -35,12 +35,13 @@ export const NavLogo = styled(LinkR)`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: 10px;
   font-weight: bold;
   text-decoration: none;
 
   span {
     color: #ed7966;
+    padding:5px;
   }
 `;
 
@@ -155,23 +156,35 @@ export const DropdownMenu = styled.ul`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: absolute;
   top: 4.5rem;
-  right: 4rem;
+  right: 12rem;
   width: 250px;
   padding: 15px;
   border-radius: 15px;
   background-color: #fff;
   list-style: none;
-  border:1px solid gray;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  span{
+    color:#2F2E41;
+    font-weight: bold;
+    padding: 15px;
+  }
 `;
 
 
 
 
-export const DropdownItem = styled.li`
-  padding: 10px 0;
+export const DropdownItem = styled(LinkR)`
+  color: #000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  margin-top:15px;
+  margin-bottom:15px;
   cursor: pointer;
   &:hover {
-    background-color: #666;
+    color: #ed7966;
   }
 `;
 

@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import httpClient from "../utils/httpClient";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
-
 const useAuth = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");

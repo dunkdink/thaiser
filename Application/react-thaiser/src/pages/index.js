@@ -19,7 +19,7 @@ function Home() {
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} />
+      <Navbar toggle={toggle} isHome={true}/>
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
       <InfoSection {...homeObjThree} />

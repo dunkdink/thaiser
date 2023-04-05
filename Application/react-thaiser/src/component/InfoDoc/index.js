@@ -13,9 +13,9 @@ import {
   Img,
   ImgWrap,
   InfoBtnLink,
-} from "./InfoElements";
+} from "./InfoDocElements";
 
-const infoSection = ({
+const InfoDoc = ({
   lightBg,
   id,
   imgStart,
@@ -43,7 +43,7 @@ const infoSection = ({
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <BtnWrap>
-                    {id === "home" ? (
+                    {id === "Doc1" ? (
                       <InfoBtnLink
                         to="classify"
                         smooth={true}
@@ -57,7 +57,7 @@ const infoSection = ({
                       >
                         {buttonLabel}
                       </InfoBtnLink>
-                    ) : id === "classify-emotions" ? (
+                    ) : id === "Doc3" ? (
                       <InfoBtnLink
                         to="document"
                         smooth={true}
@@ -88,4 +88,4 @@ const infoSection = ({
   );
 };
 
-export default infoSection;
+export default InfoDoc;

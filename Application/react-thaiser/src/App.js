@@ -8,8 +8,10 @@ import ClassifyPage from "./pages/classify";
 import EditProfilePage from "./pages/editprofile";
 import HistoryPage from "./pages/history";
 import ResultPage from "./pages/result";
+import DocumentPage from "./pages/document";
 import httpClient from "./utils/httpClient";
 import { UserContext } from "./contexts/UserContext";
+import { SnackbarProvider } from "notistack";
 
 function App() {
   const token = localStorage.getItem("token");
@@ -20,7 +22,6 @@ function App() {
       httpClient
         .post(`/validateToken/?token=${token}`)
         .then((res) => {
-
           setUser(res.data);
         })
         .catch((err) => {
@@ -31,19 +32,22 @@ function App() {
   }, [token]);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/signin" element={<SignInPage/>} />
-          <Route path="/signup" element={<SignUpPage/>} />
-          <Route path="/classify" element={<ClassifyPage/>} />
-          <Route path="/editprofile" element={<EditProfilePage/>} />
-          <Route path="/result" element={<ResultPage/>} />
-          <Route path="/history" element={<HistoryPage/>} />
-        </Routes>
-      </Router>
-    </UserContext.Provider>
+    <SnackbarProvider>
+      <UserContext.Provider value={{ user, setUser }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignInPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/classify" element={<ClassifyPage />} />
+            <Route path="/editprofile" element={<EditProfilePage />} />
+            <Route path="/result" element={<ResultPage />} />
+            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/document" element={<DocumentPage />} />
+          </Routes>
+        </Router>
+      </UserContext.Provider>
+    </SnackbarProvider>
   );
 }
 

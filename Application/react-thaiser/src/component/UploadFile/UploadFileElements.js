@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding:50px;
+  padding: 50px;
   top: 0;
   left: 0;
   right: 0;
@@ -9,11 +9,10 @@ export const Container = styled.div`
   z-index: 0;
   overflow: hidden;
   background-color: #e5e5e5;
-  min-height: 692px;
+  min-height: 100vh;
 `;
 
 export const UploadFileWrap = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +32,7 @@ export const UploadFileH1 = styled.div`
 `;
 
 export const UploadFileContent = styled.div`
-  padding:50px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;

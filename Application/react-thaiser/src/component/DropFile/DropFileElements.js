@@ -3,7 +3,7 @@ import Dropzone from "react-dropzone";
 import ProgressBar from "react-progressbar";
 
 export const Container = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@ export const Title = styled.p`
 `;
 
 export const DropFileDropzone = styled(Dropzone)`
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   border: 2px dashed #ccc;
@@ -48,7 +48,7 @@ export const DropFileProgressBar = styled(ProgressBar)`
 `;
 
 export const DropFileBtn = styled.button`
-  margin-bottom: 15px;
+  margin-top: 15px;
   border-radius: 50px;
   background: #2e307a;
   white-space: nowrap;
@@ -80,7 +80,7 @@ export const TitleWarp = styled.div`
 `;
 
 export const DragWarp = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -90,6 +90,4 @@ export const DragWarp = styled.div`
   border-radius: 10px 10px 0px 0px;
 `;
 
-export const DragContent = styled.div`
-
-`;
+export const DragContent = styled.div``;

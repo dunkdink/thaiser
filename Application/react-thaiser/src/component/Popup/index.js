@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import useAuth from "../../hooks/useAuth";
 import { FaRegWindowClose } from "react-icons/fa";
+import { UserContext } from "../../contexts/UserContext";
 import {
   Overlay,
   Card,
@@ -26,7 +27,7 @@ function PopupCard({ onClose }) {
   const [gender, setGender] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const { onSignUp, loading, message } = useAuth();
-
+  const { user } = useContext(UserContext);
   const onSubmit = async (e) => {
     e.preventDefault();
     setAge(Number(age));
@@ -49,19 +50,13 @@ function PopupCard({ onClose }) {
             <Form onSubmit={onSubmit}>
               <FormRow>
                 <FormContent>
-                  <FormLabel htmlFor="for">ชื่อผู้ใช้งาน</FormLabel>
-                  <FormInput
-                    type="username"
-                    required
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
                   <FormLabel htmlFor="for">ชื่อ</FormLabel>
                   <FormInput
                     type="name"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    placeholder={user?.name}
                   />
                   <FormLabel htmlFor="for">อีเมล</FormLabel>
                   <FormInput
@@ -69,6 +64,7 @@ function PopupCard({ onClose }) {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    placeholder={user?.email}
                   />
                   <FormLabel htmlFor="for">อายุ</FormLabel>
                   <FormInput
@@ -76,6 +72,7 @@ function PopupCard({ onClose }) {
                     required
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
+                    placeholder={user?.age}
                   />
                   <FormLabel htmlFor="for">เพศ</FormLabel>
                   <FormInput
@@ -83,13 +80,16 @@ function PopupCard({ onClose }) {
                     required
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
+                    placeholder={user?.gender}
                   />
                 </FormContent>
               </FormRow>
             </Form>
           </FormContent>
           <FormButton type="submit">บันทึก</FormButton>
-          <CloseButton onClick={onClose}><FaRegWindowClose size={'1.5rem'}/></CloseButton>
+          <CloseButton onClick={onClose}>
+            <FaRegWindowClose size={"1.5rem"} />
+          </CloseButton>
         </Card>
       </Overlay>
     </>

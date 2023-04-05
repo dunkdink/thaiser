@@ -58,18 +58,24 @@ function EditProfile() {
               <EditProfileHeading>เพศ</EditProfileHeading>
               <Text>{user?.gender}</Text>
               <EditProfileLine></EditProfileLine>
-              <EditProfileBtn onClick={handleProfileClick}>แก้ไขบัญชี</EditProfileBtn>
+              <EditProfileBtn onClick={handleProfileClick}>
+                แก้ไขบัญชี
+              </EditProfileBtn>
               {isOpenProfile && <PopupCard onClose={handleProfileClose} />}
               <EditProfileHeading>รหัสผ่าน</EditProfileHeading>
               <EditProfileLine></EditProfileLine>
               <EditProfileBtn onClick={handlePasswordClick}>
                 ตั้งรหัสผ่าน
               </EditProfileBtn>
-              {isOpenPassword && <PopupPasswordCard onClose={handlePasswordClose} />}
+              {isOpenPassword && (
+                <PopupPasswordCard onClose={handlePasswordClose} />
+              )}
               <EditProfileLine></EditProfileLine>
               <EditProfileH1>ประวัติการใช้งาน</EditProfileH1>
             </EditProfileContent>
-            <EditProfileBtnLink to="/history">ประวัติการทำรายการ</EditProfileBtnLink>
+            <EditProfileBtnLink to="/history">
+              ประวัติการทำรายการ
+            </EditProfileBtnLink>
           </EditProfileMenu>
         </EditProfileWrap>
       </Container>

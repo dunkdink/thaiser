@@ -8,7 +8,7 @@ import {
   SidebarLink,
   SideBtnWrap,
   SidebarRoute,
-  SidebarRoute2
+  SidebarRoute2,
 } from "./SideBarElements";
 
 function Sidebar({ isOpen, toggle }) {
@@ -19,9 +19,15 @@ function Sidebar({ isOpen, toggle }) {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="home" onClick={toggle}>หน้าหลัก</SidebarLink>
-          <SidebarLink to="classify-emotions" onClick={toggle}>จำแนกอารมณ์</SidebarLink>
-          <SidebarLink to="tools" onClick={toggle}>เครื่องมือและAPI</SidebarLink>
+          <SidebarLink to="home" onClick={toggle}>
+            หน้าหลัก
+          </SidebarLink>
+          <SidebarLink to="classify-emotions" onClick={toggle}>
+            จำแนกอารมณ์
+          </SidebarLink>
+          <SidebarLink to="tools" onClick={toggle}>
+            เครื่องมือและAPI
+          </SidebarLink>
           <SidebarRoute2 to="/signin">เข้าสู่ระบบ</SidebarRoute2>
         </SidebarMenu>
         <SideBtnWrap>

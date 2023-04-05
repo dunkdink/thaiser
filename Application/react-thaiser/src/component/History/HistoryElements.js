@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 export const Container = styled.div`
-  padding:50px;
+  padding: 50px;
   top: 0;
   left: 0;
   right: 0;
@@ -27,7 +27,7 @@ export const HistoryH1 = styled.h1`
   font-weight: 700;
   color: #29282d;
   text-align: center;
-  margin-bottom:40px;
+  margin-bottom: 40px;
 `;
 export const HistoryContent = styled.div`
   display: flex;
@@ -50,10 +50,10 @@ export const HistoryMenu = styled.div`
 
 export const HistoryBtn = styled(LinkR)`
   margin-bottom: 15px;
-  margin-left:15px;
+  margin-left: 15px;
   border-radius: 50px;
   background: #2e307a;
-  text-align:center;
+  text-align: center;
   white-space: nowrap;
   padding: 10px 22px;
   color: #fff;

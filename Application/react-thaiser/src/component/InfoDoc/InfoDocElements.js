@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 export const InfoContainer = styled.div`
   color: #fff;
-  background: ${({ lightBg }) => (lightBg ? "#E5E5E5" : "#2F2E41")};
-
+  background: #fff;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: #e5e5e5;
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
@@ -12,7 +14,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
    display: grid;
    z-index:1;
-   height: 750px;
+   height: 450px;
    width: 100%;
    max-width:1100px
    margin-right:auto;
@@ -86,15 +88,13 @@ export const BtnWrap = styled.div`
   justify-content: flex-start;
 `;
 export const ImgWrap = styled.div`
-  max-width: 555px;
+  max-width: 400px;
   height: 100%;
   background-color: #fff;
   border-radius: 100px 0px 0px 20px;
 `;
 export const Img = styled.img`
   width: 100%;
-  margin: 0 0 10px 0;
-  padding-right: 0;
 `;
 
 export const InfoBtnLink = styled(LinkR)`

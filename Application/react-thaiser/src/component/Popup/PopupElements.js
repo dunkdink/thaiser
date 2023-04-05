@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 export const Overlay = styled.div`
   position: fixed;
@@ -7,6 +7,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 `;
 
 export const Card = styled.div`
@@ -19,8 +20,8 @@ export const Card = styled.div`
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
-  border-radius:15px;
-  width:500px;
+  border-radius: 15px;
+  width: 500px;
 `;
 
 export const CloseButton = styled.button`
@@ -30,9 +31,7 @@ export const CloseButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-
 `;
-
 
 export const Container = styled.div`
   position: fixed;
@@ -44,7 +43,6 @@ export const Container = styled.div`
   overflow: hidden;
   background-color: #e5e5e5;
   min-height: 692px;
-  
 `;
 
 export const FormWrap = styled.div`
@@ -66,7 +64,7 @@ export const Icon = styled(Link)`
   margin-top: 32px;
 
   span {
-    color: #ED7966;
+    color: #ed7966;
   }
 
   @media screen and (max-width: 480px) {
@@ -87,7 +85,6 @@ export const Form = styled.form`
   height: auto;
   border-radius: 40px;
   z-index: 1;
-
 
   @media screen and (max-width: 400px) {
     padding: 32px 32px;
@@ -119,9 +116,14 @@ export const FormLabel = styled.label`
 export const FormInput = styled.input`
   padding: 16px;
   margin-bottom: 32px;
-  border: 1px solid #000;
+  border: 1px solid #ced4da;
   border-radius: 40px;
   width: 300px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+  }
 `;
 
 export const FormButton = styled.button`
@@ -158,8 +160,7 @@ export const LabelLinks = styled(Link)`
 `;
 
 export const FormRow = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: row;
   gap: 50px;
-`
-
+`;

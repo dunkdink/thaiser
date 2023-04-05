@@ -11,7 +11,6 @@ export const Container = styled.div`
   overflow: hidden;
   background-color: #e5e5e5;
   min-height: 692px;
-  
 `;
 
 export const FormWrap = styled.div`
@@ -33,7 +32,7 @@ export const Icon = styled(Link)`
   margin-top: 32px;
 
   span {
-    color: #ED7966;
+    color: #ed7966;
   }
 
   @media screen and (max-width: 480px) {
@@ -89,6 +88,11 @@ export const FormInput = styled.input`
   border: none;
   border-radius: 40px;
   width: 300px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+  }
 `;
 
 export const FormButton = styled.button`
@@ -124,8 +128,7 @@ export const LabelLinks = styled(Link)`
 `;
 
 export const FormRow = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: row;
   gap: 50px;
-`
-
+`;

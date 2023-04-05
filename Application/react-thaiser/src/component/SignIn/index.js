@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import { useSnackbar } from "notistack";
 import {
   Container,
   FormWrap,
@@ -12,12 +13,10 @@ import {
   FormInput,
   FormButton,
   Text,
-  LabelLinks
+  LabelLinks,
 } from "./SigninElements";
 
-
 function SignIn() {
- 
   // const signIn = async () => {
   //   const data = await axios.post('http://127.0.0.1:8000/signin', {
   //     username: "user1",
@@ -27,6 +26,7 @@ function SignIn() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
   const { onSignIn, loading, message } = useAuth();
 
   const onSubmit = async (e) => {
@@ -38,17 +38,27 @@ function SignIn() {
     <>
       <Container>
         <FormWrap>
-          <Icon to="/">Thai <span>SER</span></Icon>
+          <Icon to="/">
+            Thai <span>SER</span>
+          </Icon>
           <FormContent>
             <Form onSubmit={onSubmit}>
               <FormH1>เข้าสู่ระบบ</FormH1>
               <FormH2>เข้าสู่ระบบเพื่อเข้าใช้งาน</FormH2>
-              <FormLabel htmlFor="for">user</FormLabel>
-              <FormInput type="text" required onChange={(e)=>setEmail(e.target.value)}/>
+              <FormLabel htmlFor="for">ชื่อผู้ใช้งาน</FormLabel>
+              <FormInput
+                type="text"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <FormLabel htmlFor="for">รหัสผ่าน</FormLabel>
-              <FormInput type="password" required onChange={(e)=>setPassword(e.target.value)} />
+              <FormInput
+                type="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
               <FormButton type="submit">เข้าสู่ระบบ</FormButton>
-              <Text>ยังไม่มีบัญชีเพื่อใช้งาน ?</Text> 
+              <Text>ยังไม่มีบัญชีเพื่อใช้งาน ?</Text>
               <LabelLinks to="/signup">ลงชื่อเข้าใช้งาน</LabelLinks>
             </Form>
           </FormContent>

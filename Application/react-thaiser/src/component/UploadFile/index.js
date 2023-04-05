@@ -1,6 +1,11 @@
 import React from "react";
 import DropFile from "../DropFile";
-import { Container,UploadFileWrap,UploadFileH1,UploadFileContent} from "./UploadFileElements";
+import {
+  Container,
+  UploadFileWrap,
+  UploadFileH1,
+  UploadFileContent,
+} from "./UploadFileElements";
 function UploadFile() {
   return (
     <>

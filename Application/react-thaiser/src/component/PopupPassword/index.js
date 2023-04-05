@@ -44,12 +44,12 @@ function PopupPasswordCard({ onClose }) {
     <>
       <Overlay>
         <Card>
-        <FormH1>แก้ไขรหัสผ่าน</FormH1>
+          <FormH1>แก้ไขรหัสผ่าน</FormH1>
           <FormContent>
             <Form onSubmit={onSubmit}>
               <FormRow>
                 <FormContent>
-                <FormLabel htmlFor="for">รหัสผ่านเก่า</FormLabel>
+                  <FormLabel htmlFor="for">รหัสผ่านเก่า</FormLabel>
                   <FormInput
                     type="password"
                     required
@@ -72,11 +72,12 @@ function PopupPasswordCard({ onClose }) {
                   />
                 </FormContent>
               </FormRow>
-              
             </Form>
           </FormContent>
-          <FormButton type="submit">แก้ไขรหัสผ่าน</FormButton>
-          <CloseButton onClick={onClose}><FaRegWindowClose size={'1.5rem'}/></CloseButton>
+          <FormButton type="submit">บันทึก</FormButton>
+          <CloseButton onClick={onClose}>
+            <FaRegWindowClose size={"1.5rem"} />
+          </CloseButton>
         </Card>
       </Overlay>
     </>

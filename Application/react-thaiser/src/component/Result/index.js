@@ -10,7 +10,7 @@ import {
   ResultH2,
   ResultH3,
   ResultBtn,
-  ResultCol
+  ResultCol,
 } from "./ResultElements";
 
 function Result() {
@@ -20,7 +20,6 @@ function Result() {
         <ResultWrap>
           <ResultRow>
             <ResultBtn>อัปโหลดเสียง</ResultBtn>
-            <ResultBtn>เริ่มการบันทึก</ResultBtn>
           </ResultRow>
           <ResultMenu>
             <ResultH1>ผลลัพธ์</ResultH1>

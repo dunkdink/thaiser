@@ -4,7 +4,7 @@ import EditProfile from "../component/EditProfile";
 function editprofile() {
   return (
     <>
-      <Navbar isHome={false}/>
+      <Navbar isHome={false} />
       <EditProfile />
     </>
   );

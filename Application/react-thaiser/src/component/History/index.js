@@ -7,7 +7,7 @@ import {
   HistoryH1,
   HistoryContent,
   HistoryMenu,
-  HistoryBtn
+  HistoryBtn,
 } from "./HistoryElements";
 function History() {
   const [data, setData] = useState([]);
@@ -77,7 +77,7 @@ function History() {
           <HistoryH1>ประวัติการทำรายการ</HistoryH1>
           <HistoryMenu>
             <HistoryContent>
-              <HistoryBtn  to="/editprofile" >ย้อนกลับ</HistoryBtn>
+              <HistoryBtn to="/editprofile">ย้อนกลับ</HistoryBtn>
               <DataTable
                 columns={columns}
                 data={data}

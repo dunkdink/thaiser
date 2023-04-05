@@ -9,10 +9,18 @@ import {
   DragWarp,
   DragContent,
 } from "./DropFileElements";
-import useUpload  from "../../hooks/useUpload";
+import useUpload from "../../hooks/useUpload";
 import PopupProcessCard from "../PopupProcess";
 function DropFile() {
-  const {file,filename,progress,handleUpload,onFileChange,setFilename,setFile} = useUpload();
+  const {
+    file,
+    filename,
+    progress,
+    handleUpload,
+    onFileChange,
+    setFilename,
+    setFile,
+  } = useUpload();
   const [isOpenUpload, setIsOpenUpload] = useState(false);
 
   const handleUploadClick = () => {
@@ -22,11 +30,18 @@ function DropFile() {
   const handleUploadClose = () => {
     setIsOpenUpload(false);
   };
-  
+
   return (
     <>
       <Container>
-        {file && <PopupProcessCard onClose={handleUploadClose} filename={filename} progress={progress} handleUpload={handleUpload}/>}
+        {file && (
+          <PopupProcessCard
+            onClose={handleUploadClose}
+            filename={filename}
+            progress={progress}
+            handleUpload={handleUpload}
+          />
+        )}
         {!file && (
           <DropFileDropzone
             onDrop={(acceptedFiles) => {
@@ -39,8 +54,6 @@ function DropFile() {
                 <input {...getInputProps()} />
                 <DragContent>
                   <DropFileBtn>อัพโหลดเสียง</DropFileBtn>
-                  <p>หรือ</p>
-                  <DropFileBtn>เริ่มการบันทึก</DropFileBtn>
                 </DragContent>
               </DragWarp>
             )}

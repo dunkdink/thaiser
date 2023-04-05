@@ -5,8 +5,8 @@ import UploadFile from "../component/UploadFile";
 function ClassifyPage() {
   return (
     <>
-      <Navbar isHome={false}/>
-      <UploadFile/>
+      <Navbar isHome={false} />
+      <UploadFile />
     </>
   );
 }

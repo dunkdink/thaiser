@@ -4,7 +4,7 @@ import Navbar from "../component/Navbar";
 function ResultPage() {
   return (
     <>
-      <Navbar isHome={false}/>
+      <Navbar isHome={false} />
       <Result />
     </>
   );

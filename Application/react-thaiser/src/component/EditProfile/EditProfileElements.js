@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 export const Container = styled.div`
-  padding:50px;
+  padding: 50px;
   top: 0;
   left: 0;
   right: 0;
@@ -104,7 +104,7 @@ export const EditProfileBtnLink = styled(LinkR)`
   border-radius: 50px;
   background: #ed7966;
   white-space: nowrap;
-  text-align:center;
+  text-align: center;
   padding: 10px 22px;
   color: #fff;
   font-size: 16px;

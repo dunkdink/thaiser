@@ -2,11 +2,13 @@ import { useContext, useState } from "react";
 import httpClient from "../utils/httpClient";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useSnackbar } from "notistack";
 const useAuth = () => {
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const { setUser } = useContext(UserContext);
+  const { enqueueSnackbar } = useSnackbar();
 
   function errorHandler(error) {
     let resMessage = "";
@@ -23,6 +25,7 @@ const useAuth = () => {
   function onLogout() {
     localStorage.removeItem("token");
     setUser(null);
+    enqueueSnackbar("You have been logged out.", { variant: "success" });
   }
 
   async function onSignIn(username, password) {
@@ -31,14 +34,20 @@ const useAuth = () => {
     const formData = new FormData();
     formData.append("username", username);
     formData.append("password", password);
-    const res = await httpClient.post("/signin", formData);
-    if (res.data) {
-      localStorage.setItem("token", res.data.access_token);
-      setUser(res.data.user);
-      navigate("/");
+    try {
+      const res = await httpClient.post("/signin", formData);
+      if (res.data) {
+        localStorage.setItem("token", res.data.access_token);
+        setUser(res.data.user);
+        navigate("/");
+        enqueueSnackbar("Login successful!", { variant: "success" });
+      }
+      return res.data;
+    } catch (error) {
+      enqueueSnackbar("Incorrect email or password", { variant: "error" });
+    } finally {
+      setLoading(false);
     }
-
-    return res.data;
   }
 
   async function onSignUp({ username, email, password, name, age, gender }) {
@@ -54,6 +63,7 @@ const useAuth = () => {
     });
     if (res.status === 200) {
       navigate("/signin");
+      enqueueSnackbar("Signup successful!", { variant: "success" });
     }
     return res;
   }

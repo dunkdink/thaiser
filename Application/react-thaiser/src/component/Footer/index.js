@@ -17,33 +17,14 @@ const Footer = () => {
           <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/signin">How to</FooterLink>
-              <FooterLink to="/signin">Classify Emotions</FooterLink>
-              <FooterLink to="/signin">Tools</FooterLink>
-              <FooterLink to="/signin">Terms of Service</FooterLink>
+              <FooterLink to="/signin">Git Hub</FooterLink>
+              <FooterLink to="/signin">CE KMITL</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
+              <FooterLinkTitle>Tools & API</FooterLinkTitle>
               <FooterLink to="/signin">How to</FooterLink>
-              <FooterLink to="/signin">Classify Emotions</FooterLink>
+              <FooterLink to="/signin">Document</FooterLink>
               <FooterLink to="/signin">Tools</FooterLink>
-              <FooterLink to="/signin">Terms of Service</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/signin">How to</FooterLink>
-              <FooterLink to="/signin">Classify Emotions</FooterLink>
-              <FooterLink to="/signin">Tools</FooterLink>
-              <FooterLink to="/signin">Terms of Service</FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/signin">How to</FooterLink>
-              <FooterLink to="/signin">Classify Emotions</FooterLink>
-              <FooterLink to="/signin">Tools</FooterLink>
-              <FooterLink to="/signin">Terms of Service</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>

@@ -5,10 +5,11 @@ export const homeObjOne = {
   lightTextDesc: false,
   topLine: "การจําแนกอารมณ์จากเสียงพูดภาษาไทย",
   headline: "Classifying Emotion of Thai-Human Voice",
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  buttonLabel: "Get Started",
+  description:
+    "Classifying Emotion of Thai-Human Voice เป็นกระบวนการที่ใช้เทคโนโลยีการเรียนรู้เชิงลึก (deep learning) เพื่อจำแนกอารมณ์จากเสียงพูดของมนุษย์ภาษาไทย โดยกระบวนการนี้จะนำเสียงพูดภาษาไทยเข้าสู่ระบบแล้วให้โมเดล deep learning ทำการเรียนรู้และจำแนกว่าเสียงนั้นมีอารมณ์เป็นอย่างไร เช่น อารมณ์ของความสุข โกรธ หรือเศร้า เป็นต้น",
+  buttonLabel: "จำแนกอารมณ์",
   imgStart: false,
-  img: require('../../images/svg-1.svg').default,
+  img: require("../../images/svg-1.svg").default,
   alt: "emotions",
   dark: true,
   primary: true,
@@ -20,12 +21,13 @@ export const homeObjTwo = {
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
-  topLine: "การจําแนกอารมณ์จากเสียงพูดภาษาไทย",
-  headline: "Classifying Emotion of Thai-Human Voice",
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  buttonLabel: "Get Started",
+  topLine: "การจําแนกอารมณ์",
+  headline: "Classifying Emotion",
+  description:
+    "การจำแนกอารมณ์จากเสียงนั้นมีความสำคัญอย่างมากในการประยุกต์ใช้งานในหลายสาขาอาชีพ เช่น ด้านการแพทย์ ที่สามารถใช้ในการวินิจฉัยโรคทางจิตเวชได้ หรือในการสื่อสารระหว่างมนุษย์และเครื่องจักร (human-machine interaction) เพื่อให้เครื่องจักรสามารถเข้าใจและตอบสนองต่อความต้องการของมนุษย์ได้ดียิ่งขึ้น",
+  buttonLabel: "เอกสารที่เกี่ยวข้อง",
   imgStart: true,
-  img: require('../../images/svg-2.svg').default,
+  img: require("../../images/svg-2.svg").default,
   alt: "emotions",
   dark: true,
   primary: true,
@@ -33,19 +35,18 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  id: "tools",
+  id: "s",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: "การจําแนกอารมณ์จากเสียงพูดภาษาไทย",
-  headline: "Classifying Emotion of Thai-Human Voice",
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  buttonLabel: "Get Started",
+  headline:
+    "คุณสามารถจำแนกอารมณ์ของเสียงได้อย่างง่ายดาย ด้วยการคลิกเพียงครั้งเดียว",
+  description:
+    "ด้วยเทคโนโลยี AI ที่ฉลาดของเรา คุณสามารถลดเวลาในการจัดการไฟล์เสียงของคุณ และช่วยให้การสื่อสารของคุณดูมีชีวิตชีวาขึ้น เมื่อรับรู้อารมณ์ของฝ่ายตรงข้าม",
   imgStart: false,
-  img: require('../../images/svg-1.svg').default,
+  img: require("../../images/svg-1.svg").default,
   alt: "emotions",
   dark: false,
   primary: true,
   darkText: true,
 };
-

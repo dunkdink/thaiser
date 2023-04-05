@@ -27,15 +27,13 @@ export const ResultRow = styled.div`
   display: fixed;
   flex-direction: row;
   gap: 100px;
-
 `;
 
 export const ResultCol = styled.div`
   display: flex;
   flex-direction: column;
-  width:50%;
+  width: 50%;
 `;
-
 
 export const ResultMenu = styled.div`
   margin-bottom: 50px;

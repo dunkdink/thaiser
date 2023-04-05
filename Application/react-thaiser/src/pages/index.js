@@ -8,22 +8,21 @@ import Footer from "../component/Footer";
 import {
   homeObjOne,
   homeObjTwo,
-  homeObjThree
+  homeObjThree,
 } from "../component/InfoSection/Data";
-
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-  
+
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
-      <Navbar toggle={toggle} isHome={true}/>
+      <Navbar toggle={toggle} isHome={true} />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
       <InfoSection {...homeObjThree} />
-      <Services/>
+      <Services />
       <Footer />
     </>
   );

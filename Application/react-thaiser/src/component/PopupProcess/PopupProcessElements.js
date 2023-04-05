@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Overlay = styled.div`
   position: fixed;
@@ -7,19 +7,26 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 `;
 export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
+  border-radius: 15px;
+  width: 500px;
 `;
 export const PopupProcessContent = styled.div`
-  display: flex;
+  display: absolute;
   flex-direction: column;
-  width:1000px;
+  width: 100%;
+  align-items: center;
 `;
 
 export const CloseButton = styled.button`

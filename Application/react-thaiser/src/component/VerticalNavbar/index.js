@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { IconContext } from "react-icons/lib";
-import { Link } from 'react-scroll';
+import { Link } from "react-scroll";
 import {
   Nav,
   NavbarContainer,
@@ -11,9 +11,9 @@ import {
 } from "./VerticalNavbarElements";
 
 const VerticalNavbar = () => {
-  const [scrollNav, setScrollNav] = useState(false);
   const [scrollToId, setScrollToId] = useState(null);
-  
+  const [activeLink, setActiveLink] = useState("Doc1");
+
   const changeNav = (id) => {
     setScrollToId(id);
   };
@@ -21,58 +21,59 @@ const VerticalNavbar = () => {
   useEffect(() => {
     if (scrollToId) {
       const target = document.getElementById(scrollToId);
-      target.scrollIntoView({ behavior: "smooth" });
+      target.scrollIntoView();
       setScrollToId(null);
     }
   }, [scrollToId]);
 
   return (
     <>
-        <Nav scrollNav={scrollNav}>
-          <NavbarContainer>
-            <NavLogo>
-              Thai <span>SER</span> Doc
-            </NavLogo>
-            <NavMenu>
-              <NavItem>
-                <NavLinks 
-                  to="Doc1"
-                  smooth={true}
-                  duration={500}
-                  offset={100}
-                  spy={true}
-                  exact="true"
-                  onClick={() => changeNav("Doc1")}>
-                  จำแนกอารมณ์
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
+      <Nav>
+        <NavbarContainer>
+        <NavLogo>
+            Thai <span>SER</span> Doc
+          </NavLogo>
+          <NavMenu>
+            <NavItem>
+              <NavLinks
+                to="Doc1"
+                className={activeLink === "Doc1" ? "active" : ""}
+                onClick={() => {
+                  changeNav("Doc1");
+                  setActiveLink("Doc1");
+                }}
+              >
+                จำแนกอารมณ์
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks
                 to="Doc2"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  onClick={() => changeNav("Doc2")}
-                >
-                  เริ่มต้นทำงาน
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
-                  to="Doc3"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact="true"
-                  onClick={() => changeNav("Doc3")}
-                >
-                  API อ้างอิง
-                </NavLinks>
-              </NavItem>
-            </NavMenu>
-          </NavbarContainer>
-        </Nav>
+                className={activeLink === "Doc2" ? "active" : ""}
+                onClick={() => {
+                  changeNav("Doc2");
+                  setActiveLink("Doc2");
+                }}
+              >
+                เริ่มต้นทำงาน
+              </NavLinks>
+            </NavItem>
+
+            <NavItem>
+              <NavLinks
+                to="Doc3"
+                className={activeLink === "Doc3" ? "active" : ""}
+                onClick={() => {
+                  changeNav("Doc3");
+                  setActiveLink("Doc3");
+                }}
+              >
+                API อ้างอิง
+              </NavLinks>
+            </NavItem>
+          </NavMenu>
+        </NavbarContainer>
+      </Nav>
     </>
   );
 };

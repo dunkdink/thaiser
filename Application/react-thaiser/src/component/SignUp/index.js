@@ -15,6 +15,7 @@ import {
   Text,
   LabelLinks,
   FormRow,
+  ButtonWrap,
 } from "./SignupElements";
 
 function SignUp() {
@@ -107,7 +108,9 @@ function SignUp() {
                   />
                 </FormContent>
               </FormRow>
-              <FormButton type="submit">ลงชื่อเข้าใช้งาน</FormButton>
+              <ButtonWrap>
+                <FormButton type="submit">ลงชื่อเข้าใช้งาน</FormButton>
+              </ButtonWrap>
               <Text>มีบัญชีอยู่แล้ว?</Text>
               <LabelLinks to="/signin">เข้าสู่ระบบ</LabelLinks>
             </Form>

@@ -21,6 +21,8 @@ export const Card = styled.div`
   padding: 20px;
   border-radius: 15px;
   width: 500px;
+  border-top: 3px solid #ed7966;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 `;
 export const PopupProcessContent = styled.div`
   display: absolute;

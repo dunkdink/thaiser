@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.nav`
-  background: transparent;
+  background: #fff;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -76,7 +76,6 @@ export const NavLogo = styled.h2`
   margin-left: 10px;
   font-weight: bold;
   text-decoration: none;
-
   span {
     color: #ed7966;
     padding: 0px 5px;

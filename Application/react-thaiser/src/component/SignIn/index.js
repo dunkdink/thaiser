@@ -17,16 +17,9 @@ import {
 } from "./SigninElements";
 
 function SignIn() {
-  // const signIn = async () => {
-  //   const data = await axios.post('http://127.0.0.1:8000/signin', {
-  //     username: "user1",
-  //     password: "password1",
-  //   })
-  // }
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { enqueueSnackbar } = useSnackbar();
   const { onSignIn, loading, message } = useAuth();
 
   const onSubmit = async (e) => {

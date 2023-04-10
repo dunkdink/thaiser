@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 import {
   Overlay,
@@ -8,6 +8,8 @@ import {
 } from "./PopupProcessElements";
 import { DropFileProgressBar, DropFileBtn } from "../DropFile/DropFileElements";
 function PopupProcessCard({ onClose, filename, progress, handleUpload }) {
+
+
   return (
     <>
       <Overlay>

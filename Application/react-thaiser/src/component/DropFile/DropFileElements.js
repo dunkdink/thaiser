@@ -9,8 +9,9 @@ export const Container = styled.div`
   justify-content: center;
   height: 300px;
   width: 320px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  border-top: 3px solid #ed7966;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 `;
 
 export const Title = styled.p`
@@ -64,14 +65,14 @@ export const DropFileBtn = styled.button`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    color: #ed7966;
+    background: #ed7966;
   }
 `;
 
 export const TitleWarp = styled.div`
   color: #fff;
   font-size: 16px;
-  background: #ed7966;
+  background: #2e307a;
   width: 320px;
   height: 40px;
   padding: 10px;

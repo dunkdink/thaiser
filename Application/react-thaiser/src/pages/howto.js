@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "../component/Navbar";
-import Document from "../component/Document";
+import HowTo from "../component/HowTo";
 
-function document() {
+function howto() {
   return (
     <>
       <Navbar isHome={false} />
-      <Document/>
+      <HowTo />
     </>
   );
 }
 
-export default document;
+export default howto;

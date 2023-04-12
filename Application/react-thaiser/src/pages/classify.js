@@ -1,5 +1,5 @@
 import React from "react";
-
+import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
 import UploadFile from "../component/UploadFile";
 function ClassifyPage() {
@@ -7,6 +7,7 @@ function ClassifyPage() {
     <>
       <Navbar isHome={false} />
       <UploadFile />
+      <Footer />
     </>
   );
 }

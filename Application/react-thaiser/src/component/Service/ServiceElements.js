@@ -70,12 +70,12 @@ export const ServicesH1 = styled.h1`
 `;
 
 export const ServicesH2 = styled.h2`
-  color: #2f2e41;
+  color: #000;
   font-size: 1rem;
   margin-bottom: 10px;
 `;
 export const ServicesP = styled.p`
-  color: #2f2e41;
+  color: #000;
   font-size: 1rem;
   text-align: center;
 `;

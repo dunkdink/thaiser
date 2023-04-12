@@ -12,7 +12,6 @@ import {
 import useUpload from "../../hooks/useUpload";
 import PopupProcessCard from "../PopupProcess";
 function DropFile() {
-
   const {
     file,
     filename,
@@ -22,7 +21,7 @@ function DropFile() {
     setFilename,
     setFile,
   } = useUpload();
-  
+
   const [isOpenUpload, setIsOpenUpload] = useState(false);
 
   const handleUploadClick = () => {
@@ -30,7 +29,7 @@ function DropFile() {
   };
 
   const handleUploadClose = () => {
-    setFile(null); 
+    setFile(null);
     setIsOpenUpload(false);
   };
   return (
@@ -44,7 +43,7 @@ function DropFile() {
             handleUpload={handleUpload}
           />
         )}
-        {(
+        {
           <DropFileDropzone
             onDrop={(acceptedFiles) => {
               setFile(acceptedFiles[0]);
@@ -60,7 +59,7 @@ function DropFile() {
               </DragWarp>
             )}
           </DropFileDropzone>
-        )}
+        }
         <TitleWarp>
           <p>ลากและวางที่นี่</p>
         </TitleWarp>

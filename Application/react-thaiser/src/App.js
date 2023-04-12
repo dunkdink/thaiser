@@ -9,10 +9,12 @@ import EditProfilePage from "./pages/editprofile";
 import HistoryPage from "./pages/history";
 import ResultPage from "./pages/result";
 import DocumentPage from "./pages/document";
+import HowToPage from "./pages/howto";
+import ToolsPage from "./pages/tools";
 import httpClient from "./utils/httpClient";
 import { UserContext } from "./contexts/UserContext";
 import { SnackbarProvider } from "notistack";
-
+import ScrollToTop from "./component/ScrollToTop";
 function App() {
   const token = localStorage.getItem("token");
   const [user, setUser] = useState(null);
@@ -35,6 +37,7 @@ function App() {
     <SnackbarProvider>
       <UserContext.Provider value={{ user, setUser }}>
         <Router>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignInPage />} />
@@ -44,6 +47,8 @@ function App() {
             <Route path="/result" element={<ResultPage />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/document" element={<DocumentPage />} />
+            <Route path="/howto" element={<HowToPage />} />
+            <Route path="/tools" element={<ToolsPage />} />
           </Routes>
         </Router>
       </UserContext.Provider>

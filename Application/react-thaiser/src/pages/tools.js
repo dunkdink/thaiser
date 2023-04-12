@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar from "../component/Navbar";
-import Document from "../component/Document";
+import Tools from "../component/Tools";
 
-function document() {
+function tools() {
   return (
     <>
       <Navbar isHome={false} />
-      <Document/>
+      <Tools />
     </>
   );
 }
 
-export default document;
+export default tools;

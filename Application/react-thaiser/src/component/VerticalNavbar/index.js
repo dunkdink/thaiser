@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { IconContext } from "react-icons/lib";
 import { Link } from "react-scroll";
 import {
@@ -10,7 +10,7 @@ import {
   NavLogo,
 } from "./VerticalNavbarElements";
 
-const VerticalNavbar = () => {
+const VerticalNavbar = ({ isDoc, isHowTo,isTools }) => {
   const [scrollToId, setScrollToId] = useState(null);
   const [activeLink, setActiveLink] = useState("Doc1");
 
@@ -30,51 +30,98 @@ const VerticalNavbar = () => {
     <>
       <Nav>
         <NavbarContainer>
-        <NavLogo>
-            Thai <span>SER</span> Doc
-          </NavLogo>
-          <NavMenu>
-            <NavItem>
-              <NavLinks
-                to="Doc1"
-                className={activeLink === "Doc1" ? "active" : ""}
-                onClick={() => {
-                  changeNav("Doc1");
-                  setActiveLink("Doc1");
-                }}
-              >
-                จำแนกอารมณ์
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                to="Doc2"
-                className={activeLink === "Doc2" ? "active" : ""}
-                onClick={() => {
-                  changeNav("Doc2");
-                  setActiveLink("Doc2");
-                }}
-              >
-                เริ่มต้นทำงาน
-              </NavLinks>
-            </NavItem>
+          {isDoc && (
+            <NavLogo>
+              Thai <span>SER</span> Doc
+            </NavLogo>
+          )}
+          {isHowTo && (
+            <NavLogo>
+              Thai <span>SER</span> How To
+            </NavLogo>
+          )}
+          {isTools && (
+            <NavLogo>
+              Thai <span>SER</span> Tools
+            </NavLogo>
+          )}
+          {isDoc && (
+            <NavMenu>
+              <NavItem>
+                <NavLinks
+                  to="Doc1"
+                  className={activeLink === "Doc1" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc1");
+                    setActiveLink("Doc1");
+                  }}
+                >
+                  จำแนกอารมณ์
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="Doc2"
+                  className={activeLink === "Doc2" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc2");
+                    setActiveLink("Doc2");
+                  }}
+                >
+                  เริ่มต้นทำงาน
+                </NavLinks>
+              </NavItem>
 
-            <NavItem>
-              <NavLinks
-                to="Doc3"
-                className={activeLink === "Doc3" ? "active" : ""}
-                onClick={() => {
-                  changeNav("Doc3");
-                  setActiveLink("Doc3");
-                }}
-              >
-                API อ้างอิง
-              </NavLinks>
-            </NavItem>
-          </NavMenu>
+              <NavItem>
+                <NavLinks
+                  to="Doc3"
+                  className={activeLink === "Doc3" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc3");
+                    setActiveLink("Doc3");
+                  }}
+                >
+                  API อ้างอิง
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          )}
+          {isHowTo && (
+            <NavMenu>
+              <NavItem>
+                <NavLinks
+                  to="Doc1"
+                  className={activeLink === "Doc1" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc1");
+                    setActiveLink("Doc1");
+                  }}
+                >
+                  วิธีการใช้งาน
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          )}
+          {isTools && (
+            <NavMenu>
+              <NavItem>
+                <NavLinks
+                  to="Doc1"
+                  className={activeLink === "Doc1" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc1");
+                    setActiveLink("Doc1");
+                  }}
+                >
+                  API
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          )}
         </NavbarContainer>
       </Nav>
     </>
   );
 };
+
 export default VerticalNavbar;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   ResultWrap,
@@ -12,14 +12,59 @@ import {
   ResultBtn,
   ResultCol,
 } from "./ResultElements";
+import useUpload from "../../hooks/useUpload";
+import PopupProcessCard from "../PopupProcess";
 
 function Result() {
+  const {
+    file,
+    filename,
+    progress,
+    handleUpload,
+    onFileChange,
+    setFilename,
+    setFile,
+  } = useUpload();
+
+  const [isOpenUpload, setIsOpenUpload] = useState(false);
+
+  const handleUploadClick = () => {
+    setIsOpenUpload(true);
+  };
+
+  const handleUploadClose = () => {
+    setFile(null);
+    setIsOpenUpload(false);
+  };
   return (
     <>
       <Container>
+        {file && (
+          <PopupProcessCard
+            onClose={handleUploadClose}
+            filename={filename}
+            progress={progress}
+            handleUpload={handleUpload}
+          />
+        )}
         <ResultWrap>
           <ResultRow>
-            <ResultBtn>อัปโหลดเสียง</ResultBtn>
+            <input
+              type="file"
+              id="fileInput"
+              style={{ display: "none" }}
+              onChange={(event) => {
+                setFile(event.target.files[0]);
+                setFilename(event.target.files[0].name);
+              }}
+            />
+            <ResultBtn
+              onClick={() => {
+                document.getElementById("fileInput").click();
+              }}
+            >
+              อัปโหลดเสียง
+            </ResultBtn>
           </ResultRow>
           <ResultMenu>
             <ResultH1>ผลลัพธ์</ResultH1>
@@ -33,15 +78,15 @@ function Result() {
               </ResultCol>
               <ResultCol>
                 <ResultH2>จำนวนอารมณ์</ResultH2>
-                <ResultH3>xxx</ResultH3>
-                <ResultH3>xxx</ResultH3>
-                <ResultH3>xxx</ResultH3>
-                <ResultH3>xxx</ResultH3>
+                <ResultH3>2</ResultH3>
+                <ResultH3>4</ResultH3>
+                <ResultH3>2</ResultH3>
+                <ResultH3>1</ResultH3>
               </ResultCol>
             </ResultContent>
             <ResultAllContent>
               <ResultRow>
-                <ResultH3>ผลลัพธ์ทั้งหมด : xxxx</ResultH3>
+                <ResultH3>ผลลัพธ์ทั้งหมด : อารมณ์สุข</ResultH3>
               </ResultRow>
             </ResultAllContent>
           </ResultMenu>

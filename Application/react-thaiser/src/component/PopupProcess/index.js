@@ -1,15 +1,14 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { FaRegWindowClose } from "react-icons/fa";
 import {
   Overlay,
   Card,
   PopupProcessContent,
   CloseButton,
+  DropFileBtnWrap
 } from "./PopupProcessElements";
 import { DropFileProgressBar, DropFileBtn } from "../DropFile/DropFileElements";
 function PopupProcessCard({ onClose, filename, progress, handleUpload }) {
-
-
   return (
     <>
       <Overlay>
@@ -18,7 +17,9 @@ function PopupProcessCard({ onClose, filename, progress, handleUpload }) {
             <div>
               <p>{filename}</p>
               <DropFileProgressBar completed={progress} />
-              <DropFileBtn onClick={handleUpload}>Upload</DropFileBtn>
+              <DropFileBtnWrap>
+                <DropFileBtn onClick={handleUpload}>Upload</DropFileBtn>
+              </DropFileBtnWrap>
             </div>
           </PopupProcessContent>
           <CloseButton onClick={onClose}>

@@ -35,10 +35,9 @@ export const NavLogo = styled(LinkR)`
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 10px;
   font-weight: bold;
   text-decoration: none;
-
+  
   span {
     color: #ed7966;
     padding: 5px;
@@ -200,4 +199,10 @@ export const NavProfile = styled.div`
   &.active {
     border-bottom: 3px solid #ed7966;
   }
+`;
+export const NavBtnWarp = styled.div`
+  border-radius:100px;
+  border: 3px solid #000;
+  height: 70%;
+  margin-top:10px;
 `;

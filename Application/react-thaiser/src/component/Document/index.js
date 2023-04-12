@@ -8,7 +8,7 @@ function Document() {
     <>
       <Container>
         <DocumentWrap>
-          <VerticalNavbar />
+          <VerticalNavbar isDoc={true} isHowTo={false} isTools={false}/>
           <InfoDocWrap>
             <InfoDoc {...homeObjOne} />
             <InfoDoc {...homeObjTwo} />

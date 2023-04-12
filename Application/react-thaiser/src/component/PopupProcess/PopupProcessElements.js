@@ -40,3 +40,8 @@ export const CloseButton = styled.button`
   cursor: pointer;
 `;
 
+export const DropFileBtnWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

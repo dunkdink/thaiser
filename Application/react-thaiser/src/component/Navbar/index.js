@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { FaBars, FaRegUserCircle, FaRegSmile } from "react-icons/fa";
+import { FaBars, FaRegUserCircle, FaRegSmile,FaAngleDown,FaAngleUp } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 import { UserContext } from "../../contexts/UserContext";
@@ -19,6 +19,7 @@ import {
   DropdownMenu,
   DropdownItem,
   NavProfile,
+  NavBtnWarp,
 } from "./NavbarElements";
 
 const Navbar = ({ toggle, isHome }) => {
@@ -58,7 +59,7 @@ const Navbar = ({ toggle, isHome }) => {
           <NavbarContainer>
             <NavLogo to="/" onClick={toggleHome}>
               Thai<span>SER</span>
-              <FaRegSmile size={"2rem"} />
+              <FaRegSmile size={"2rem"} style={{ marginLeft: '10px' }}/>
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -104,10 +105,11 @@ const Navbar = ({ toggle, isHome }) => {
               </NavMenu>
             )}
             {user ? (
-              <NavBtn>
+              <NavBtnWarp>
                 <NavProfile onClick={toggleMenu}>
                   <FaRegUserCircle size={"1.5rem"} />
                   <span>{user.name}</span>
+                  {isOpen ? (<FaAngleUp size={"1.5rem"} style={{ marginLeft: '10px' }}/>) : (<FaAngleDown size={"1.5rem"} style={{ marginLeft: '10px' }}/>)}
                 </NavProfile>
                 <DropdownMenu isOpen={isOpen}>
                   <span>{user.name}</span>
@@ -117,7 +119,7 @@ const Navbar = ({ toggle, isHome }) => {
                   </DropdownItem>
                 </DropdownMenu>
                 {isOpen && <div onClick={closeMenu}></div>}
-              </NavBtn>
+              </NavBtnWarp>
             ) : (
               <NavBtn>
                 <NavBtnLink2 to="/signin">เข้าสู่ระบบ</NavBtnLink2>

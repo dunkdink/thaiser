@@ -49,3 +49,21 @@ export const homeObjThree = {
   primary: true,
   darkText: true,
 };
+
+export const homeObjFour = {
+  id: "Doc4",
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  headline: `วิธีการใช้งาน\nสำหรับการจำแนกอารมณ์`,
+  description:
+    "การจำแนกอารมณ์เป็นเครื่องมือที่ช่วยให้นักพัฒนาเว็บและแอปพลิเคชันสามารถเรียกใช้การตรวจจับและจำแนกอารมณ์จากเสียงได้โดยง่าย โดยใช้ API",
+  buttonLabel: "xxxx",
+  imgStart: false,
+  img: require("../../images/undraw_site_stats_re_ejgy.svg").default,
+  alt: "emotions",
+  dark: false,
+  primary: true,
+  darkText: true,
+};
+

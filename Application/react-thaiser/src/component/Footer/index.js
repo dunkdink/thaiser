@@ -22,9 +22,9 @@ const Footer = () => {
             </FooterLinkItems>
             <FooterLinkItems>
               <FooterLinkTitle>Tools & API</FooterLinkTitle>
-              <FooterLink to="/signin">How to</FooterLink>
-              <FooterLink to="/signin">Document</FooterLink>
-              <FooterLink to="/signin">Tools</FooterLink>
+              <FooterLink to="/howto">How to</FooterLink>
+              <FooterLink to="/document">Document</FooterLink>
+              <FooterLink to="/tools">Tools</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>

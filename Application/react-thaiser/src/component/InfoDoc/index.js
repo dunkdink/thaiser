@@ -30,6 +30,7 @@ const InfoDoc = ({
   primary,
   dark,
   dark2,
+  isHowTo
 }) => {
   return (
     <>
@@ -41,7 +42,7 @@ const InfoDoc = ({
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
-                <BtnWrap>
+                {isHowTo &&(<BtnWrap>
                   <BtnWrap>
                     {id === "Doc1" ? (
                       <InfoBtnLink
@@ -73,7 +74,7 @@ const InfoDoc = ({
                       </InfoBtnLink>
                     ) : null}
                   </BtnWrap>
-                </BtnWrap>
+                </BtnWrap>)}
               </TextWrapper>
             </Column1>
             <Column2>

@@ -69,6 +69,6 @@ export const HistoryBtn = styled(LinkR)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    color: #ed7966;
+    background: #ed7966;
   }
 `;

@@ -100,6 +100,42 @@ const VerticalNavbar = ({ isDoc, isHowTo,isTools }) => {
                   วิธีการใช้งาน
                 </NavLinks>
               </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="Doc2"
+                  className={activeLink === "Doc2" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc2");
+                    setActiveLink("Doc2");
+                  }}
+                >
+                  1. อัปโหลดไฟล์เสียง
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="Doc3"
+                  className={activeLink === "Doc3" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc3");
+                    setActiveLink("Doc3");
+                  }}
+                >
+                  2.จำแนกอารมณ์
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="Doc14"
+                  className={activeLink === "Doc4" ? "active" : ""}
+                  onClick={() => {
+                    changeNav("Doc4");
+                    setActiveLink("Doc4");
+                  }}
+                >
+                  3.ดูผลลัพธ์
+                </NavLinks>
+              </NavItem>
             </NavMenu>
           )}
           {isTools && (

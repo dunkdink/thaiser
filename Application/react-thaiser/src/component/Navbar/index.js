@@ -59,7 +59,7 @@ const Navbar = ({ toggle, isHome }) => {
           <NavbarContainer>
             <NavLogo to="/" onClick={toggleHome}>
               Thai<span>SER</span>
-              <FaRegSmile size={"2rem"} style={{ marginLeft: '10px' }}/>
+              <FaRegSmile size={"2rem"} style={{ marginLeft: '10px' ,color:'#2F2E41'}}/>
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -107,9 +107,9 @@ const Navbar = ({ toggle, isHome }) => {
             {user ? (
               <NavBtnWarp>
                 <NavProfile onClick={toggleMenu}>
-                  <FaRegUserCircle size={"1.5rem"} />
+                  <FaRegUserCircle size={"1.5rem"} style={{color:'#2F2E41'}} />
                   <span>{user.name}</span>
-                  {isOpen ? (<FaAngleUp size={"1.5rem"} style={{ marginLeft: '10px' }}/>) : (<FaAngleDown size={"1.5rem"} style={{ marginLeft: '10px' }}/>)}
+                  {isOpen ? (<FaAngleUp size={"1.5rem"} style={{ marginLeft: '10px' ,color:'#2F2E41'}}/>) : (<FaAngleDown size={"1.5rem"} style={{ marginLeft: '10px' ,color:'#2F2E41'}}/>)}
                 </NavProfile>
                 <DropdownMenu isOpen={isOpen}>
                   <span>{user.name}</span>

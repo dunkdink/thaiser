@@ -3,7 +3,7 @@ import { Link as LinkR } from "react-router-dom";
 export const InfoContainer = styled.div`
   color: #fff;
   background: ${({ lightBg }) => (lightBg ? "#E5E5E5" : "#2F2E41")};
-
+  height: 90vh;
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }

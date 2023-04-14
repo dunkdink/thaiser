@@ -5,7 +5,7 @@ import { Link as LinkS } from "react-scroll";
 export const Nav = styled.nav`
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   background: ${({ scrollNav }) => (scrollNav ? "#fff" : "#fff")};
-  height: 80px;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  color: #000;
+  color: #2F2E41;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -73,7 +73,7 @@ export const NavItem = styled.li`
   height: 80px;
 `;
 export const NavLinks = styled(LinkS)`
-  color: #000;
+  color: #2F2E41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -87,7 +87,7 @@ export const NavLinks = styled(LinkS)`
 `;
 
 export const NavLink2 = styled(LinkR)`
-  color: #000;
+  color: #2F2E41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -136,7 +136,7 @@ export const NavBtnLink2 = styled(LinkR)`
   border-radius: 50px;
   white-space: nowrap;
   padding: 10px 22px;
-  color: #000;
+  color: #2F2E41;
   font-size: 16px;
   outline: none;
   border: none;
@@ -147,7 +147,7 @@ export const NavBtnLink2 = styled(LinkR)`
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #fff;
-    color: #010606;
+    color: #ed7966;
   }
 `;
 
@@ -170,7 +170,7 @@ export const DropdownMenu = styled.ul`
 `;
 
 export const DropdownItem = styled(LinkR)`
-  color: #000;
+  color: #2F2E41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -185,7 +185,7 @@ export const DropdownItem = styled(LinkR)`
 `;
 
 export const NavProfile = styled.div`
-  color: #000;
+  color: #2F2E41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -202,7 +202,7 @@ export const NavProfile = styled.div`
 `;
 export const NavBtnWarp = styled.div`
   border-radius:100px;
-  border: 3px solid #000;
+  border: 3px solid #2F2E41;
   height: 70%;
   margin-top:10px;
 `;

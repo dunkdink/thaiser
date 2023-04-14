@@ -9,6 +9,7 @@ export const InfoContainer = styled.div`
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
+  height: 90vh;
 `;
 
 export const InfoWrapper = styled.div`
@@ -55,6 +56,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
+  white-space: pre-line;
   color: #ed7966;
   font-size: 16px;
   line-height: 16px;
@@ -65,6 +67,7 @@ export const TopLine = styled.p`
 `;
 
 export const Heading = styled.h1`
+  white-space: pre-line;
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
@@ -76,6 +79,7 @@ export const Heading = styled.h1`
   }
 `;
 export const Subtitle = styled.p`
+  white-space: pre-line;
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;

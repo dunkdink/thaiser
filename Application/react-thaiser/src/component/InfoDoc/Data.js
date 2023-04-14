@@ -50,15 +50,13 @@ export const homeObjThree = {
   darkText: true,
 };
 
-export const homeObjFour = {
-  id: "Doc4",
+export const howToObjOne = {
+  id: "Doc1",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
   headline: `วิธีการใช้งาน\nสำหรับการจำแนกอารมณ์`,
-  description:
-    "การจำแนกอารมณ์เป็นเครื่องมือที่ช่วยให้นักพัฒนาเว็บและแอปพลิเคชันสามารถเรียกใช้การตรวจจับและจำแนกอารมณ์จากเสียงได้โดยง่าย โดยใช้ API",
-  buttonLabel: "xxxx",
+  description: `เว็บไซต์นี้มีเครื่องมือสำหรับการอัปโหลดไฟล์เสียงและตัวอย่างโค้ดที่สามารถนำไปใช้กับ API เพื่อจำแนกอารมณ์เสียงไทยได้ โดยท่านสามารถติดตามวิธีการใช้งานตามขั้นตอนได้ในหน้านี้`,
   imgStart: false,
   img: require("../../images/undraw_site_stats_re_ejgy.svg").default,
   alt: "emotions",
@@ -67,3 +65,49 @@ export const homeObjFour = {
   darkText: true,
 };
 
+export const howToObjTwo = {
+  id: "Doc2",
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  headline: `อัปโหลดไฟล์เสียง`,
+  description:
+    "การจำแนกอารมณ์เป็นเครื่องมือที่ช่วยให้นักพัฒนาเว็บและแอปพลิเคชันสามารถเรียกใช้การตรวจจับและจำแนกอารมณ์จากเสียงได้โดยง่าย โดยใช้ API",
+  imgStart: false,
+  img: require("../../images/undraw_site_stats_re_ejgy.svg").default,
+  alt: "emotions",
+  dark: false,
+  primary: true,
+  darkText: true,
+};
+
+export const howToObjThree = {
+  id: "Doc3",
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  headline: `จำแนกอารมณ์`,
+  description:
+    "การจำแนกอารมณ์เป็นเครื่องมือที่ช่วยให้นักพัฒนาเว็บและแอปพลิเคชันสามารถเรียกใช้การตรวจจับและจำแนกอารมณ์จากเสียงได้โดยง่าย โดยใช้ API",
+  imgStart: false,
+  img: require("../../images/undraw_site_stats_re_ejgy.svg").default,
+  alt: "emotions",
+  dark: false,
+  primary: true,
+  darkText: true,
+};
+
+export const howToObjFour = {
+  id: "Doc4",
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
+  headline: `ดูผลลัพธ์`,
+  description: `หากผู้ใช้งานต้องการดูผลลัพธ์จากการจำแนกอารมณ์ เพียงแค่กดที่ปุ่ม "ประวัติการทำรายการ" เพื่อบันทึกผลลัพธ์ลงในคอมพิวเตอร์ของผู้ใช้งาน`,
+  imgStart: false,
+  img: require("../../images/undraw_site_stats_re_ejgy.svg").default,
+  alt: "emotions",
+  dark: false,
+  primary: true,
+  darkText: true,
+};

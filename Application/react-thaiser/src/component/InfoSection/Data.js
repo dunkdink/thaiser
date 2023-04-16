@@ -35,7 +35,7 @@ export const homeObjTwo = {
 };
 
 export const homeObjThree = {
-  id: "s",
+  id: "howto",
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
@@ -43,6 +43,7 @@ export const homeObjThree = {
   description:
     "ด้วยเทคโนโลยี AI ที่ฉลาดของเรา คุณสามารถลดเวลาในการจัดการไฟล์เสียงของคุณ และช่วยให้การสื่อสารของคุณดูมีชีวิตชีวาขึ้น เมื่อรับรู้อารมณ์ของฝ่ายตรงข้าม",
   imgStart: false,
+  buttonLabel: "วิธีการใช้งาน",
   img: require("../../images/undraw_click_here_re_y6uq.svg").default,
   alt: "emotions",
   dark: false,

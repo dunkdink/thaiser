@@ -44,28 +44,37 @@ const useAuth = () => {
       }
       return res.data;
     } catch (error) {
-      enqueueSnackbar("Incorrect email or password", { variant: "error" });
+      const { detail } = error.response.data;
+      enqueueSnackbar(detail, { variant: "error" });
     } finally {
       setLoading(false);
     }
   }
 
   async function onSignUp({ username, email, password, name, age, gender }) {
-    const res = await httpClient.post("/signup", null, {
-      params: {
-        username: username,
-        email: email,
-        password: password,
-        name: name,
-        age: age,
-        gender: gender,
-      },
-    });
-    if (res.status === 200) {
-      navigate("/signin");
-      enqueueSnackbar("Signup successful!", { variant: "success" });
+    setLoading(true);
+    try {
+      const res = await httpClient.post("/signup", null, {
+        params: {
+          username: username,
+          email: email,
+          password: password,
+          name: name,
+          age: age,
+          gender: gender,
+        },
+      });
+      if (res.status === 200) {
+        navigate("/signin");
+        enqueueSnackbar("Signup successful!", { variant: "success" });
+      }
+      return res;
+    } catch (error) {
+      const { detail } = error.response.data;
+      enqueueSnackbar(detail, { variant: "error" });
+    } finally {
+      setLoading(false);
     }
-    return res;
   }
 
   return { onLogout, message, loading, onSignIn, onSignUp };

@@ -30,7 +30,7 @@ const InfoDoc = ({
   primary,
   dark,
   dark2,
-  isHowTo
+  isHowTo,
 }) => {
   return (
     <>
@@ -42,39 +42,40 @@ const InfoDoc = ({
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
-                {isHowTo &&(<BtnWrap>
+                {isHowTo && (
                   <BtnWrap>
-                    {id === "Doc1" ? (
-                      <InfoBtnLink
-                        to="classify"
-                        smooth={true}
-                        duration={500}
-                        spy={true}
-                        exact="true"
-                        offset={-80}
-                        primary={primary ? 1 : 0}
-                        dark={dark ? 1 : 0}
-                        dark2={dark2 ? 1 : 0}
-                      >
-                        {buttonLabel}
-                      </InfoBtnLink>
-                    ) : id === "Doc3" ? (
-                      <InfoBtnLink
-                        to="document"
-                        smooth={true}
-                        duration={500}
-                        spy={true}
-                        exact="true"
-                        offset={-80}
-                        primary={primary ? 1 : 0}
-                        dark={dark ? 1 : 0}
-                        dark2={dark2 ? 1 : 0}
-                      >
-                        {buttonLabel}
-                      </InfoBtnLink>
-                    ) : null}
+                    <BtnWrap>
+                      {id === "Doc1" ? (
+                        <InfoBtnLink
+                          to="classify"
+                          primary={primary ? 1 : 0}
+                          dark={dark ? 1 : 0}
+                          dark2={dark2 ? 1 : 0}
+                        >
+                          {buttonLabel}
+                        </InfoBtnLink>
+                      ) : id === "Doc2" ? (
+                        <InfoBtnLink
+                          to="/howto"
+                          primary={primary ? 1 : 0}
+                          dark={dark ? 1 : 0}
+                          dark2={dark2 ? 1 : 0}
+                        >
+                          {buttonLabel}
+                        </InfoBtnLink>
+                      ) : id === "Doc3" ? (
+                        <InfoBtnLink
+                          to="/tools"
+                          primary={primary ? 1 : 0}
+                          dark={dark ? 1 : 0}
+                          dark2={dark2 ? 1 : 0}
+                        >
+                          {buttonLabel}
+                        </InfoBtnLink>
+                      ) : null}
+                    </BtnWrap>
                   </BtnWrap>
-                </BtnWrap>)}
+                )}
               </TextWrapper>
             </Column1>
             <Column2>

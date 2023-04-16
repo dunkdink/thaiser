@@ -117,7 +117,7 @@ export const Text = styled.span`
   font-size: 14px;
 `;
 export const LabelLinks = styled(Link)`
-  color: #000;
+  color: #29282d;
   display: inline-block;
   align-items: center;
   text-decoration: none;
@@ -128,5 +128,9 @@ export const LabelLinks = styled(Link)`
 
   &.active {
     border-bottom: 3px solid #ed7966;
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ed7966;
   }
 `;

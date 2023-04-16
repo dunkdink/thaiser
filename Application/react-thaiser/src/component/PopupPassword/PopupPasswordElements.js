@@ -81,6 +81,7 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
+  flex-direction: column;
   display: flex;
   margin: 0 auto;
   padding: 10px 32px;
@@ -165,4 +166,10 @@ export const FormRow = styled.div`
   display: flex;
   flex-direction: row;
   gap: 50px;
+`;
+
+export const FormButtonWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

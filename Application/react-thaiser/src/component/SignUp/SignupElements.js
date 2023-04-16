@@ -121,11 +121,15 @@ export const LabelLinks = styled(Link)`
   text-align: center;
   padding: 0 1rem;
   height: 100%;
-  color: #000;
+  color: #2F2E41;
   cursor: pointer;
 
   &.active {
     border-bottom: 3px solid #ed7966;
+  }
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ed7966;
   }
 `;
 

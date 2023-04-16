@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import useAuth from "../../hooks/useAuth";
+import useEditProfile from "../../hooks/useEditProfile";
 import { FaRegWindowClose } from "react-icons/fa";
 import { UserContext } from "../../contexts/UserContext";
 import {
@@ -9,36 +9,34 @@ import {
   FormContent,
   Form,
   FormH1,
-  FormH2,
   FormLabel,
   FormInput,
   FormButton,
-  Text,
-  LabelLinks,
   FormRow,
+  FormButtonWrap
 } from "./PopupElements";
 
 function PopupCard({ onClose }) {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const { onSignUp, loading, message } = useAuth();
+  const [initialValues, setInitialValues] = useState({});
+  const [updatedValues, setUpdatedValues] = useState({});
+  const { onChangeProfile } = useEditProfile();
   const { user } = useContext(UserContext);
+
+  
+  if (JSON.stringify(initialValues) !== JSON.stringify(user)) {
+    setInitialValues(user);
+    setUpdatedValues(user);
+  }
+
+  const handleChange = (e) => {
+    setUpdatedValues({ ...updatedValues, [e.target.name]: e.target.value });
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    setAge(Number(age));
-    const user = await onSignUp({
-      username,
-      email,
-      password,
-      name,
-      age,
-      gender,
-    });
+    const { name, email, age, gender } = updatedValues;
+    onChangeProfile(name, email, age, gender);
+    onClose(true);
   };
 
   return (
@@ -50,43 +48,41 @@ function PopupCard({ onClose }) {
             <Form onSubmit={onSubmit}>
               <FormRow>
                 <FormContent>
-                  <FormLabel htmlFor="for">ชื่อ</FormLabel>
+                  <FormLabel htmlFor="name">ชื่อ</FormLabel>
                   <FormInput
-                    type="name"
-                    required
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder={user?.name}
+                    type="text"
+                    name="name"
+                    value={updatedValues.name || ""}
+                    onChange={handleChange}
                   />
-                  <FormLabel htmlFor="for">อีเมล</FormLabel>
+                  <FormLabel htmlFor="email">อีเมล</FormLabel>
                   <FormInput
                     type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder={user?.email}
+                    name="email"
+                    value={updatedValues.email || ""}
+                    onChange={handleChange}
                   />
-                  <FormLabel htmlFor="for">อายุ</FormLabel>
+                  <FormLabel htmlFor="age">อายุ</FormLabel>
                   <FormInput
-                    type="age"
-                    required
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
-                    placeholder={user?.age}
+                    type="number"
+                    name="age"
+                    value={updatedValues.age || ""}
+                    onChange={handleChange}
                   />
-                  <FormLabel htmlFor="for">เพศ</FormLabel>
+                  <FormLabel htmlFor="gender">เพศ</FormLabel>
                   <FormInput
-                    type="gender"
-                    required
-                    value={gender}
-                    onChange={(e) => setGender(e.target.value)}
-                    placeholder={user?.gender}
+                    type="text"
+                    name="gender"
+                    value={updatedValues.gender || ""}
+                    onChange={handleChange}
                   />
                 </FormContent>
               </FormRow>
+              <FormButtonWrap>
+                <FormButton type="submit">บันทึก</FormButton>
+              </FormButtonWrap>
             </Form>
           </FormContent>
-          <FormButton type="submit">บันทึก</FormButton>
           <CloseButton onClick={onClose}>
             <FaRegWindowClose size={"1.5rem"} />
           </CloseButton>

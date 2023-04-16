@@ -7,6 +7,7 @@ import {
   FooterLinkItems,
   FooterLinkTitle,
   FooterLink,
+  FooterA,
 } from "./FooterElements";
 
 const Footer = () => {
@@ -16,15 +17,19 @@ const Footer = () => {
         <FooterLinksContainer>
           <FooterLinksWrapper>
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/signin">Git Hub</FooterLink>
-              <FooterLink to="/signin">CE KMITL</FooterLink>
+              <FooterLinkTitle>เกี่ยวกับเรา</FooterLinkTitle>
+              <FooterA href="https://github.com/dunkdink" target="_blank">
+                Git Hub
+              </FooterA>
+              <FooterA href="https://www.ce.kmitl.ac.th/" target="_blank">
+                CE KMITL
+              </FooterA>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>Tools & API</FooterLinkTitle>
-              <FooterLink to="/howto">How to</FooterLink>
-              <FooterLink to="/document">Document</FooterLink>
-              <FooterLink to="/tools">Tools</FooterLink>
+              <FooterLinkTitle>เครื่องมือและ API</FooterLinkTitle>
+              <FooterLink to="/howto">วิธีใช้</FooterLink>
+              <FooterLink to="/document">เอกสาร</FooterLink>
+              <FooterLink to="/tools">เครื่องมือ</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>

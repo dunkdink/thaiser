@@ -10,9 +10,9 @@ function Document() {
         <DocumentWrap>
           <VerticalNavbar isDoc={true} isHowTo={false} isTools={false}/>
           <InfoDocWrap>
-            <InfoDoc {...homeObjOne} />
-            <InfoDoc {...homeObjTwo} />
-            <InfoDoc {...homeObjThree} />
+            <InfoDoc {...homeObjOne}  isHowTo={true}/>
+            <InfoDoc {...homeObjTwo} isHowTo={true}/>
+            <InfoDoc {...homeObjThree} isHowTo={true}/>
           </InfoDocWrap>
         </DocumentWrap>
       </Container>

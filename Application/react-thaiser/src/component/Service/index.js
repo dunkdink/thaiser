@@ -19,7 +19,7 @@ function Services() {
       <ServicesWrapper>
         <ServicesCard>
           <ServicesIcon src={Icon1} />
-          <ServicesH2>Tools</ServicesH2>
+          <ServicesH2>เครื่องมือ</ServicesH2>
           <ServicesP>
             ช่วยให้ผู้ใช้งานสามารถจัดการ<br/>กับไฟล์เสียงไทยได้อย่างง่ายดาย<br/>และมีประสิทธิภาพ
           </ServicesP>
@@ -34,7 +34,7 @@ function Services() {
         </ServicesCard>
         <ServicesCard>
           <ServicesIcon src={Icon3} />
-          <ServicesH2>How To</ServicesH2>
+          <ServicesH2>วิธีใช้</ServicesH2>
           <ServicesP>
             เพื่อช่วยให้ผู้ใช้งานสามารถเข้าใจและใช้งานได้อย่างถูกต้องและ<br/>มีประสิทธิภาพสูงสุด
           </ServicesP>

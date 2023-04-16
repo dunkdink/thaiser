@@ -37,7 +37,7 @@ const VerticalNavbar = ({ isDoc, isHowTo,isTools }) => {
           )}
           {isHowTo && (
             <NavLogo>
-              Thai <span>SER</span> How To
+              Thai <span>SER</span> วิธีใช้
             </NavLogo>
           )}
           {isTools && (

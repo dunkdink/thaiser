@@ -65,3 +65,15 @@ export const FooterLink = styled(Link)`
     transition: 0.3s ease-out;
   }
 `;
+
+export const FooterA = styled.a`
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+
+  &:hover {
+    color: #ed7966;
+    transition: 0.3s ease-out;
+  }
+`;

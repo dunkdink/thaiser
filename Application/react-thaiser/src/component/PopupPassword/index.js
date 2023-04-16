@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useAuth from "../../hooks/useAuth";
+import useEditPassword from "../../hooks/useEditPassword";
 import { FaRegWindowClose } from "react-icons/fa";
 import {
   Overlay,
@@ -8,36 +8,23 @@ import {
   FormContent,
   Form,
   FormH1,
-  FormH2,
   FormLabel,
   FormInput,
   FormButton,
-  Text,
-  LabelLinks,
   FormRow,
+  FormButtonWrap,
 } from "./PopupPasswordElements";
 
 function PopupPasswordCard({ onClose }) {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const { onSignUp, loading, message } = useAuth();
+  const [old_password, setOldPassword] = useState("");
+  const [new_password, setNew_password] = useState("");
+  const [confirm_password, setConfirm_password] = useState("");
+  const { onChangePassword } = useEditPassword();
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setAge(Number(age));
-    const user = await onSignUp({
-      username,
-      email,
-      password,
-      name,
-      age,
-      gender,
-    });
+    const user = onChangePassword(old_password,new_password,confirm_password);
+    onClose(true);
   };
 
   return (
@@ -53,28 +40,30 @@ function PopupPasswordCard({ onClose }) {
                   <FormInput
                     type="password"
                     required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={old_password}
+                    onChange={(e) => setOldPassword(e.target.value)}
                   />
                   <FormLabel htmlFor="for">รหัสผ่านใหม่</FormLabel>
                   <FormInput
                     type="password"
                     required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={new_password}
+                    onChange={(e) => setNew_password(e.target.value)}
                   />
                   <FormLabel htmlFor="for">ยืนยันรหัสผ่านใหม่</FormLabel>
                   <FormInput
                     type="password"
                     required
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    value={confirm_password}
+                    onChange={(e) => setConfirm_password(e.target.value)}
                   />
                 </FormContent>
               </FormRow>
+              <FormButtonWrap>
+                <FormButton type="submit">บันทึก</FormButton>
+              </FormButtonWrap>
             </Form>
           </FormContent>
-          <FormButton type="submit">บันทึก</FormButton>
           <CloseButton onClick={onClose}>
             <FaRegWindowClose size={"1.5rem"} />
           </CloseButton>

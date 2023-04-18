@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link as LinkR } from "react-router-dom";
 export const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,7 +27,8 @@ export const ServicesWrapper = styled.div`
   }
 `;
 
-export const ServicesCard = styled.div`
+export const ServicesCard = styled(LinkR)`
+  text-decoration: none;
   background: #fff;
   display: flex;
   flex-direction: column;

@@ -21,6 +21,7 @@ export const Card = styled.div`
   padding: 20px;
   border-radius: 15px;
   width: 500px;
+  height: 350px;
   border-top: 3px solid #ed7966;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 `;
@@ -44,4 +45,24 @@ export const DropFileBtnWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+export const PopupProcessWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const Text = styled.div`
+  margin-top: 45px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  width: 80%;
+`;
+
+export const LoaderWrap = styled.div`
+  display: flex;
+  padding: 80px;
 `;

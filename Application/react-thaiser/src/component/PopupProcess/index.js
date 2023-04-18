@@ -5,22 +5,40 @@ import {
   Card,
   PopupProcessContent,
   CloseButton,
-  DropFileBtnWrap
+  DropFileBtnWrap,
+  PopupProcessWrap,
+  Text,
+  LoaderWrap
 } from "./PopupProcessElements";
-import { DropFileProgressBar, DropFileBtn } from "../DropFile/DropFileElements";
+import { DropFileBtn } from "../DropFile/DropFileElements";
+import { ClipLoader } from "react-spinners";
+
 function PopupProcessCard({ onClose, filename, progress, handleUpload }) {
+  const [uploading, setUploading] = useState(false);
+
+  const handleUploadClick = async () => {
+    setUploading(true);
+    await handleUpload();
+    setUploading(false);
+  };
+
   return (
     <>
       <Overlay>
         <Card>
           <PopupProcessContent>
-            <div>
-              <p>{filename}</p>
-              <DropFileProgressBar completed={progress} />
-              <DropFileBtnWrap>
-                <DropFileBtn onClick={handleUpload}>Upload</DropFileBtn>
-              </DropFileBtnWrap>
-            </div>
+            <PopupProcessWrap>
+              <Text>{filename}</Text>
+              {uploading ? (
+                <LoaderWrap>
+                  <ClipLoader color={"#ed7966"} loading={true} size={60} />
+                </LoaderWrap>
+              ) : (
+                <DropFileBtnWrap>
+                  <DropFileBtn onClick={handleUploadClick}>Upload</DropFileBtn>
+                </DropFileBtnWrap>
+              )}
+            </PopupProcessWrap>
           </PopupProcessContent>
           <CloseButton onClick={onClose}>
             <FaRegWindowClose size={"1.5rem"} />

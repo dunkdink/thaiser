@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
-import ProgressBar from "react-progressbar";
+
 
 export const Container = styled.div`
   display: flex;
@@ -34,19 +34,7 @@ export const DropFileDropzone = styled(Dropzone)`
   }
 `;
 
-export const DropFileProgressBar = styled(ProgressBar)`
-  height: auto;
-  background-color: #eee;
-  border-radius: 5px;
-  overflow: hidden;
 
-  div {
-    height: 100%;
-    background-color: #007bff;
-    border-radius: 5px;
-    transition: width 0.2s ease-in-out;
-  }
-`;
 
 export const DropFileBtn = styled.button`
   margin-top: 15px;

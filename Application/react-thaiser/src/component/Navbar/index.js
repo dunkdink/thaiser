@@ -99,7 +99,7 @@ const Navbar = ({ toggle, isHome }) => {
                     exact="true"
                     offset={-80}
                   >
-                    เครื่องมือและ API
+                    บริการของเรา
                   </NavLinks>
                 </NavItem>
               </NavMenu>

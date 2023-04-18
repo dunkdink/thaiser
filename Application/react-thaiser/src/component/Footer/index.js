@@ -26,10 +26,10 @@ const Footer = () => {
               </FooterA>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>เครื่องมือและ API</FooterLinkTitle>
-              <FooterLink to="/howto">วิธีใช้</FooterLink>
-              <FooterLink to="/document">เอกสาร</FooterLink>
+              <FooterLinkTitle>บริการของเรา</FooterLinkTitle>
               <FooterLink to="/tools">เครื่องมือ</FooterLink>
+              <FooterLink to="/document">เอกสาร</FooterLink>
+              <FooterLink to="/howto">วิธีใช้</FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>

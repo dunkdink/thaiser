@@ -12,7 +12,7 @@ import {
 function History() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [perPage, setPerPage] = useState(10);
+  const [perPage, setPerPage] = useState(5);
   const { user } = useContext(UserContext);
 
   const customStyles = {
@@ -35,7 +35,7 @@ function History() {
     },
     tableWrapper: {
       style: {
-        width: "1000px",
+        width: "70vw",
         paddingLeft: "10px", // override the cell padding for data cells
         paddingRight: "10px",
       },
@@ -45,18 +45,19 @@ function History() {
   const columns = [
     {
       name: "ID",
-      selector: (row) => row.id,
+      selector: (row) => row.index,
     },
     {
       name: "Title",
-      selector: (row) => row.relative_path.split("/")[1].replace(/\([^)]*\)/g, ""),
-      width: "50%"
+      selector: (row) =>
+        row.relative_path.split("/")[1].replace(/\([^)]*\)/g, ""),
+      width: "50%",
     },
     {
       name: "TimeStamp",
-      selector: (row) =>  {
-        const a = row.relative_path.split("_")
-        return a[a.length - 1].split(".wav")[0].replace(/\(|\)/g, "")
+      selector: (row) => {
+        const a = row.relative_path.split("_");
+        return a[a.length - 1].split(".wav")[0].replace(/\(|\)/g, "");
       },
     },
     {

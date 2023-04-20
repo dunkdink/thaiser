@@ -7,7 +7,7 @@ function ClassifyPage() {
     <>
       <Navbar isHome={false} />
       <UploadFile />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

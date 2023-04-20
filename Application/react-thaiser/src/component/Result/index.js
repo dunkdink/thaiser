@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   ResultWrap,
@@ -20,8 +20,9 @@ function Result() {
     file,
     filename,
     progress,
+    summaries,
     handleUpload,
-    onFileChange,
+    handleSummary,
     setFilename,
     setFile,
   } = useUpload();
@@ -36,6 +37,18 @@ function Result() {
     setFile(null);
     setIsOpenUpload(false);
   };
+
+  const [resultEmotion, setResultEmotion] = useState();
+
+  useEffect(() => {
+    if (summaries) {
+      var emo = Object.keys(summaries).sort((a, b) =>
+        summaries[b] - summaries[a] 
+      )[0];
+      setResultEmotion(emo);
+    }
+  }, [summaries]);
+
   return (
     <>
       <Container>
@@ -45,6 +58,7 @@ function Result() {
             filename={filename}
             progress={progress}
             handleUpload={handleUpload}
+            handleSummary={handleSummary}
           />
         )}
         <ResultWrap>
@@ -74,19 +88,21 @@ function Result() {
                 <ResultH3>ปกติ</ResultH3>
                 <ResultH3>สุข</ResultH3>
                 <ResultH3>เศร้า</ResultH3>
+                <ResultH3>โกรธ</ResultH3>
                 <ResultH3>หงุดหงิด</ResultH3>
               </ResultCol>
               <ResultCol>
                 <ResultH2>จำนวนอารมณ์</ResultH2>
-                <ResultH3>2</ResultH3>
-                <ResultH3>4</ResultH3>
-                <ResultH3>2</ResultH3>
-                <ResultH3>1</ResultH3>
+                <ResultH3>{summaries?.Neutral || 0}</ResultH3>
+                <ResultH3>{summaries?.Happy || 0}</ResultH3>
+                <ResultH3>{summaries?.Sad || 0}</ResultH3>
+                <ResultH3>{summaries?.Angry || 0}</ResultH3>
+                <ResultH3>{summaries?.Frustrated || 0}</ResultH3>
               </ResultCol>
             </ResultContent>
             <ResultAllContent>
               <ResultRow>
-                <ResultH3>ผลลัพธ์ทั้งหมด : อารมณ์สุข</ResultH3>
+                <ResultH3>ผลลัพธ์ทั้งหมด : {resultEmotion}</ResultH3>
               </ResultRow>
             </ResultAllContent>
           </ResultMenu>

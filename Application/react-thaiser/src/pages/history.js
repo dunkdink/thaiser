@@ -7,7 +7,7 @@ function history() {
     <>
       <Navbar isHome={false} />
       <History />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

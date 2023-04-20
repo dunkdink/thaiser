@@ -8,18 +8,22 @@ import {
   DropFileBtnWrap,
   PopupProcessWrap,
   Text,
-  LoaderWrap
+  LoaderWrap,
 } from "./PopupProcessElements";
 import { DropFileBtn } from "../DropFile/DropFileElements";
 import { ClipLoader } from "react-spinners";
 
-function PopupProcessCard({ onClose, filename, progress, handleUpload }) {
+function PopupProcessCard({ onClose, filename, handleUpload, handleSummary }) {
   const [uploading, setUploading] = useState(false);
+  const [loadingSummary, setLoadingSummary] = useState(false);
 
   const handleUploadClick = async () => {
     setUploading(true);
     await handleUpload();
     setUploading(false);
+    setLoadingSummary(true);
+    await handleSummary();
+    setLoadingSummary(false);
   };
 
   return (
@@ -29,7 +33,7 @@ function PopupProcessCard({ onClose, filename, progress, handleUpload }) {
           <PopupProcessContent>
             <PopupProcessWrap>
               <Text>{filename}</Text>
-              {uploading ? (
+              {uploading || loadingSummary ? (
                 <LoaderWrap>
                   <ClipLoader color={"#ed7966"} loading={true} size={60} />
                 </LoaderWrap>

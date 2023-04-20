@@ -17,13 +17,13 @@ function DropFile() {
     filename,
     progress,
     handleUpload,
-    onFileChange,
+    handleSummary,
     setFilename,
     setFile,
   } = useUpload();
 
   const [isOpenUpload, setIsOpenUpload] = useState(false);
-
+  
   const handleUploadClick = () => {
     setIsOpenUpload(true);
   };
@@ -41,6 +41,7 @@ function DropFile() {
             filename={filename}
             progress={progress}
             handleUpload={handleUpload}
+            handleSummary={handleSummary}
           />
         )}
         {

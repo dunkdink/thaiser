@@ -14,13 +14,14 @@ import {
 } from "./ResultElements";
 import useUpload from "../../hooks/useUpload";
 import PopupProcessCard from "../PopupProcess";
+import { useContext } from "react";
+import { SummaryContext } from "../../contexts/SummaryContext";
 
 function Result() {
   const {
     file,
     filename,
     progress,
-    summaries,
     handleUpload,
     handleSummary,
     setFilename,
@@ -28,6 +29,8 @@ function Result() {
   } = useUpload();
 
   const [isOpenUpload, setIsOpenUpload] = useState(false);
+
+  const { summary } = useContext(SummaryContext);
 
   const handleUploadClick = () => {
     setIsOpenUpload(true);
@@ -41,13 +44,11 @@ function Result() {
   const [resultEmotion, setResultEmotion] = useState();
 
   useEffect(() => {
-    if (summaries) {
-      var emo = Object.keys(summaries).sort((a, b) =>
-        summaries[b] - summaries[a] 
-      )[0];
+    if (summary) {
+      var emo = Object.keys(summary).sort((a, b) => summary[b] - summary[a])[0];
       setResultEmotion(emo);
     }
-  }, [summaries]);
+  }, [summary]);
 
   return (
     <>
@@ -93,11 +94,11 @@ function Result() {
               </ResultCol>
               <ResultCol>
                 <ResultH2>จำนวนอารมณ์</ResultH2>
-                <ResultH3>{summaries?.Neutral || 0}</ResultH3>
-                <ResultH3>{summaries?.Happy || 0}</ResultH3>
-                <ResultH3>{summaries?.Sad || 0}</ResultH3>
-                <ResultH3>{summaries?.Angry || 0}</ResultH3>
-                <ResultH3>{summaries?.Frustrated || 0}</ResultH3>
+                <ResultH3>{summary?.Neutral || 0}</ResultH3>
+                <ResultH3>{summary?.Happy || 0}</ResultH3>
+                <ResultH3>{summary?.Sad || 0}</ResultH3>
+                <ResultH3>{summary?.Angry || 0}</ResultH3>
+                <ResultH3>{summary?.Frustrated || 0}</ResultH3>
               </ResultCol>
             </ResultContent>
             <ResultAllContent>

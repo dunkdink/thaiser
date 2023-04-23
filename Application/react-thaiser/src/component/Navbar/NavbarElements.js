@@ -29,7 +29,7 @@ export const NavbarContainer = styled.div`
 `;
 
 export const NavLogo = styled(LinkR)`
-  color: #2F2E41;
+  color: #2f2e41;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -37,7 +37,7 @@ export const NavLogo = styled(LinkR)`
   align-items: center;
   font-weight: bold;
   text-decoration: none;
-  
+
   span {
     color: #ed7966;
     padding: 5px;
@@ -73,7 +73,7 @@ export const NavItem = styled.li`
   height: 80px;
 `;
 export const NavLinks = styled(LinkS)`
-  color: #2F2E41;
+  color: #2f2e41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -87,7 +87,7 @@ export const NavLinks = styled(LinkS)`
 `;
 
 export const NavLink2 = styled(LinkR)`
-  color: #2F2E41;
+  color: #2f2e41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -126,7 +126,7 @@ export const NavBtnLink = styled(LinkR)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #2E307A;
+    background: #2e307a;
     color: #fff;
   }
 `;
@@ -136,7 +136,7 @@ export const NavBtnLink2 = styled(LinkR)`
   border-radius: 50px;
   white-space: nowrap;
   padding: 10px 22px;
-  color: #2F2E41;
+  color: #2f2e41;
   font-size: 16px;
   outline: none;
   border: none;
@@ -170,7 +170,7 @@ export const DropdownMenu = styled.ul`
 `;
 
 export const DropdownItem = styled(LinkR)`
-  color: #2F2E41;
+  color: #2f2e41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -185,7 +185,7 @@ export const DropdownItem = styled(LinkR)`
 `;
 
 export const NavProfile = styled.div`
-  color: #2F2E41;
+  color: #2f2e41;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -201,8 +201,8 @@ export const NavProfile = styled.div`
   }
 `;
 export const NavBtnWarp = styled.div`
-  border-radius:100px;
-  border: 3px solid #2F2E41;
+  border-radius: 100px;
+  border: 3px solid #2f2e41;
   height: 70%;
-  margin-top:10px;
+  margin-top: 10px;
 `;

@@ -23,7 +23,7 @@ function DropFile() {
   } = useUpload();
 
   const [isOpenUpload, setIsOpenUpload] = useState(false);
-  
+
   const handleUploadClick = () => {
     setIsOpenUpload(true);
   };

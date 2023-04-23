@@ -2,14 +2,16 @@ import { useState, useContext } from "react";
 import httpClient from "../utils/httpClient";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
+import { SummaryContext } from "../contexts/SummaryContext";
+
 const useUpload = () => {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
   const [filename, setFilename] = useState("");
   const { user } = useContext(UserContext);
+  const { setSummary } = useContext(SummaryContext);
   const [uploading, setUploading] = useState(false);
   const [loadingSummary, setLoadingSummary] = useState(false);
-  const [summaries, setSummaries] = useState()
 
   const onFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -33,12 +35,12 @@ const useUpload = () => {
     setLoadingSummary(true);
     try {
       const summaryRes = await httpClient.get(`/summary/${user.id}`);
-      setSummaries(JSON.parse(summaryRes.data))
-      navigate("/result");
+      setSummary(JSON.parse(summaryRes.data));
     } catch (err) {
       console.log(err);
     } finally {
-      setLoadingSummary(false)
+      setLoadingSummary(false);
+      navigate("/result");
       setFile(null);
     }
   };
@@ -46,7 +48,6 @@ const useUpload = () => {
   return {
     file,
     filename,
-    summaries,
     handleUpload,
     handleSummary,
     onFileChange,

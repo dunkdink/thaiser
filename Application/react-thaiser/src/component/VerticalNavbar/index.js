@@ -10,7 +10,7 @@ import {
   NavLogo,
 } from "./VerticalNavbarElements";
 
-const VerticalNavbar = ({ isDoc, isHowTo,isTools }) => {
+const VerticalNavbar = ({ isDoc, isHowTo, isTools }) => {
   const [scrollToId, setScrollToId] = useState(null);
   const [activeLink, setActiveLink] = useState("Doc1");
 

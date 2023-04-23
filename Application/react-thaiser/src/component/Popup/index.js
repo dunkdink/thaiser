@@ -13,7 +13,7 @@ import {
   FormInput,
   FormButton,
   FormRow,
-  FormButtonWrap
+  FormButtonWrap,
 } from "./PopupElements";
 
 function PopupCard({ onClose }) {
@@ -22,7 +22,6 @@ function PopupCard({ onClose }) {
   const { onChangeProfile } = useEditProfile();
   const { user } = useContext(UserContext);
 
-  
   if (JSON.stringify(initialValues) !== JSON.stringify(user)) {
     setInitialValues(user);
     setUpdatedValues(user);

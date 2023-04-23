@@ -8,15 +8,14 @@ function Document() {
     <>
       <Container>
         <DocumentWrap>
-          <VerticalNavbar isDoc={true} isHowTo={false} isTools={false}/>
+          <VerticalNavbar isDoc={true} isHowTo={false} isTools={false} />
           <InfoDocWrap>
-            <InfoDoc {...homeObjOne}  isHowTo={true}/>
-            <InfoDoc {...homeObjTwo} isHowTo={true}/>
-            <InfoDoc {...homeObjThree} isHowTo={true}/>
+            <InfoDoc {...homeObjOne} isHowTo={true} />
+            <InfoDoc {...homeObjTwo} isHowTo={true} />
+            <InfoDoc {...homeObjThree} isHowTo={true} />
           </InfoDocWrap>
         </DocumentWrap>
       </Container>
-
     </>
   );
 }

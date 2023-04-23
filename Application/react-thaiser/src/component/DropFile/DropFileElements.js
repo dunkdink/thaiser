@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Dropzone from "react-dropzone";
 
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,8 +32,6 @@ export const DropFileDropzone = styled(Dropzone)`
     color: #333;
   }
 `;
-
-
 
 export const DropFileBtn = styled.button`
   margin-top: 15px;

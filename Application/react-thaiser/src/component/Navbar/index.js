@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { FaBars, FaRegUserCircle, FaRegSmile,FaAngleDown,FaAngleUp } from "react-icons/fa";
+import {
+  FaBars,
+  FaRegUserCircle,
+  FaRegSmile,
+  FaAngleDown,
+  FaAngleUp,
+} from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 import { UserContext } from "../../contexts/UserContext";
@@ -59,7 +65,10 @@ const Navbar = ({ toggle, isHome }) => {
           <NavbarContainer>
             <NavLogo to="/" onClick={toggleHome}>
               Thai<span>SER</span>
-              <FaRegSmile size={"2rem"} style={{ marginLeft: '10px' ,color:'#2F2E41'}}/>
+              <FaRegSmile
+                size={"2rem"}
+                style={{ marginLeft: "10px", color: "#2F2E41" }}
+              />
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -107,9 +116,22 @@ const Navbar = ({ toggle, isHome }) => {
             {user ? (
               <NavBtnWarp>
                 <NavProfile onClick={toggleMenu}>
-                  <FaRegUserCircle size={"1.5rem"} style={{color:'#2F2E41'}} />
+                  <FaRegUserCircle
+                    size={"1.5rem"}
+                    style={{ color: "#2F2E41" }}
+                  />
                   <span>{user.name}</span>
-                  {isOpen ? (<FaAngleUp size={"1.5rem"} style={{ marginLeft: '10px' ,color:'#2F2E41'}}/>) : (<FaAngleDown size={"1.5rem"} style={{ marginLeft: '10px' ,color:'#2F2E41'}}/>)}
+                  {isOpen ? (
+                    <FaAngleUp
+                      size={"1.5rem"}
+                      style={{ marginLeft: "10px", color: "#2F2E41" }}
+                    />
+                  ) : (
+                    <FaAngleDown
+                      size={"1.5rem"}
+                      style={{ marginLeft: "10px", color: "#2F2E41" }}
+                    />
+                  )}
                 </NavProfile>
                 <DropdownMenu isOpen={isOpen}>
                   <span>{user.name}</span>

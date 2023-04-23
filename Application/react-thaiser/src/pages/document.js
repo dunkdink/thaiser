@@ -5,7 +5,7 @@ function document() {
   return (
     <>
       <Navbar isHome={false} />
-      <Document/>
+      <Document />
     </>
   );
 }

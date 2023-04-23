@@ -121,7 +121,7 @@ export const LabelLinks = styled(Link)`
   text-align: center;
   padding: 0 1rem;
   height: 100%;
-  color: #2F2E41;
+  color: #2f2e41;
   cursor: pointer;
 
   &.active {

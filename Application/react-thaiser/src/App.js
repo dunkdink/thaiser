@@ -13,11 +13,13 @@ import HowToPage from "./pages/howto";
 import ToolsPage from "./pages/tools";
 import httpClient from "./utils/httpClient";
 import { UserContext } from "./contexts/UserContext";
+import { SummaryContext } from "./contexts/SummaryContext";
 import { SnackbarProvider } from "notistack";
 import ScrollToTop from "./component/ScrollToTop";
 function App() {
   const token = localStorage.getItem("token");
   const [user, setUser] = useState(null);
+  const [summary, setSummary] = useState(null);
 
   useEffect(() => {
     if (token) {
@@ -36,21 +38,23 @@ function App() {
   return (
     <SnackbarProvider>
       <UserContext.Provider value={{ user, setUser }}>
-        <Router>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignInPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
-            <Route path="/classify" element={<ClassifyPage />} />
-            <Route path="/editprofile" element={<EditProfilePage />} />
-            <Route path="/result" element={<ResultPage />} />
-            <Route path="/history" element={<HistoryPage />} />
-            <Route path="/document" element={<DocumentPage />} />
-            <Route path="/howto" element={<HowToPage />} />
-            <Route path="/tools" element={<ToolsPage />} />
-          </Routes>
-        </Router>
+        <SummaryContext.Provider value={{ summary, setSummary }}>
+          <Router>
+            <ScrollToTop />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/signin" element={<SignInPage />} />
+              <Route path="/signup" element={<SignUpPage />} />
+              <Route path="/classify" element={<ClassifyPage />} />
+              <Route path="/editprofile" element={<EditProfilePage />} />
+              <Route path="/result" element={<ResultPage />} />
+              <Route path="/history" element={<HistoryPage />} />
+              <Route path="/document" element={<DocumentPage />} />
+              <Route path="/howto" element={<HowToPage />} />
+              <Route path="/tools" element={<ToolsPage />} />
+            </Routes>
+          </Router>
+        </SummaryContext.Provider>
       </UserContext.Provider>
     </SnackbarProvider>
   );

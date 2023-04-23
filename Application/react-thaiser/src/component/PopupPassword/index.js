@@ -23,7 +23,7 @@ function PopupPasswordCard({ onClose }) {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const user = onChangePassword(old_password,new_password,confirm_password);
+    const user = onChangePassword(old_password, new_password, confirm_password);
     onClose(true);
   };
 

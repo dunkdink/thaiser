@@ -10,7 +10,7 @@ function Tools() {
         <DocumentWrap>
           <VerticalNavbar isDoc={false} isHowTo={false} isTools={true} />
           <InfoDocWrap>
-            <SwaggerUI url="https://petstore.swagger.io/v2/swagger.json" />
+            <SwaggerUI url="http://127.0.0.1:8000/swagger.json" />
           </InfoDocWrap>
         </DocumentWrap>
       </Container>

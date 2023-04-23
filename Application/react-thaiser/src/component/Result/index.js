@@ -45,8 +45,19 @@ function Result() {
 
   useEffect(() => {
     if (summary) {
-      var emo = Object.keys(summary).sort((a, b) => summary[b] - summary[a])[0];
-      setResultEmotion(emo);
+      const translations = {
+        'Neutral': 'ปกติ',
+        'Happy': 'สุข',
+        'Sad': 'เศร้า',
+        'Angry': 'โกรธ',
+        'Frustrated': 'หงุดหงิด'
+      };
+  
+      const sortedEmotions = Object.keys(summary).sort((a, b) => summary[b] - summary[a]);
+      const primaryEmotion = sortedEmotions[0];
+      const translatedEmotion = translations[primaryEmotion] || primaryEmotion;
+  
+      setResultEmotion(translatedEmotion);
     }
   }, [summary]);
 

@@ -18,54 +18,57 @@ function History() {
   const customStyles = {
     rows: {
       style: {
-        minHeight: "50px", // override the row height
+        minHeight: "50px",
       },
     },
     headCells: {
       style: {
-        paddingLeft: "8px", // override the cell padding for head cells
+        paddingLeft: "8px",
         paddingRight: "8px",
       },
     },
     cells: {
       style: {
-        paddingLeft: "8px", // override the cell padding for data cells
+        paddingLeft: "8px",
         paddingRight: "8px",
       },
     },
     tableWrapper: {
       style: {
         width: "70vw",
-        paddingLeft: "10px", // override the cell padding for data cells
+        paddingLeft: "10px",
         paddingRight: "10px",
       },
     },
   };
 
+  const translations = {
+    ID: "ID",
+    Name: "ชื่อ",
+    "Time Range": "ช่วงเวลา",
+    "Emotion Name": "ชื่ออารมณ์",
+  };
+
   const columns = [
     {
-      name: "ID",
+      name: translations["ID"],
       selector: (row) => row.index,
     },
     {
-      name: "Title",
+      name: translations["Name"],
       selector: (row) =>
         row.relative_path.split("/")[1].replace(/\([^)]*\)/g, ""),
       width: "50%",
     },
     {
-      name: "TimeStamp",
+      name: translations["Time Range"],
       selector: (row) => {
         const a = row.relative_path.split("_");
         return a[a.length - 1].split(".wav")[0].replace(/\(|\)/g, "");
       },
     },
     {
-      name: "Emotion Id",
-      selector: (row) => row.output,
-    },
-    {
-      name: "Emotion Name",
+      name: translations["Emotion Name"],
       selector: (row) => row.emotion,
     },
   ];
@@ -81,7 +84,38 @@ function History() {
 
     const users = await response.json();
 
-    setData(users);
+    const updatedData = users.map((item) => {
+      if (item.emotion === "Neutral") {
+        return {
+          ...item,
+          emotion: "ทั่วไป",
+        };
+      } else if (item.emotion === "Happy") {
+        return {
+          ...item,
+          emotion: "สุข",
+        };
+      } else if (item.emotion === "Sad") {
+        return {
+          ...item,
+          emotion: "เศร้า",
+        };
+      } else if (item.emotion === "Angry") {
+        return {
+          ...item,
+          emotion: "โกรธ",
+        };
+      } else if (item.emotion === "Frustrated") {
+        return {
+          ...item,
+          emotion: "หงุดหงิด",
+        };
+      } else {
+        return item;
+      }
+    });
+
+    setData(updatedData);
     setLoading(false);
   }
 

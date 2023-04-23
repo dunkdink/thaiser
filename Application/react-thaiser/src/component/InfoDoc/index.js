@@ -46,14 +46,7 @@ const InfoDoc = ({
                   <BtnWrap>
                     <BtnWrap>
                       {id === "Doc1" ? (
-                        <InfoBtnLink
-                          to="classify"
-                          primary={primary ? 1 : 0}
-                          dark={dark ? 1 : 0}
-                          dark2={dark2 ? 1 : 0}
-                        >
-                          {buttonLabel}
-                        </InfoBtnLink>
+                        null
                       ) : id === "Doc2" ? (
                         <InfoBtnLink
                           to="/howto"

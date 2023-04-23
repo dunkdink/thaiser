@@ -60,9 +60,16 @@ export const Text = styled.div`
   text-overflow: ellipsis;
   text-align: center;
   width: 80%;
+    margin-bottom:20px;
+
 `;
 
 export const LoaderWrap = styled.div`
   display: flex;
-  padding: 80px;
+  flex-direction: column;
+
+  p {
+    margin-top: 10px;
+    color: #ed7966;
+  }
 `;

@@ -3,6 +3,7 @@ import httpClient from "../utils/httpClient";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { SummaryContext } from "../contexts/SummaryContext";
+import { useSnackbar } from "notistack";
 
 const useUpload = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const useUpload = () => {
   const { setSummary } = useContext(SummaryContext);
   const [uploading, setUploading] = useState(false);
   const [loadingSummary, setLoadingSummary] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
 
   const onFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -24,8 +26,10 @@ const useUpload = () => {
     try {
       const res = await httpClient.post("/upload", formData);
       console.log("upload data:", res.data);
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      const { detail } = error.response.data;
+      enqueueSnackbar(detail, { variant: "error" });
+      setFile(null);
     } finally {
       setUploading(false);
     }

@@ -46,20 +46,34 @@ function Result() {
   useEffect(() => {
     if (summary) {
       const translations = {
-        'Neutral': 'ปกติ',
-        'Happy': 'สุข',
-        'Sad': 'เศร้า',
-        'Angry': 'โกรธ',
-        'Frustrated': 'หงุดหงิด'
+        Neutral: "ปกติ",
+        Happy: "สุข",
+        Sad: "เศร้า",
+        Angry: "โกรธ",
+        Frustrated: "หงุดหงิด",
       };
-  
-      const sortedEmotions = Object.keys(summary).sort((a, b) => summary[b] - summary[a]);
+
+      const sortedEmotions = Object.keys(summary).sort(
+        (a, b) => summary[b] - summary[a]
+      );
       const primaryEmotion = sortedEmotions[0];
       const translatedEmotion = translations[primaryEmotion] || primaryEmotion;
-  
+
       setResultEmotion(translatedEmotion);
     }
   }, [summary]);
+
+  const handleFileUpload = (event) => {
+    const allowedExtensions = /(\.wav)$/i;
+    const selectedFile = event.target.files[0];
+
+    if (!selectedFile.name.match(allowedExtensions)) {
+      alert("Please upload a .wav file");
+    } else {
+      setFile(selectedFile);
+      setFilename(selectedFile.name);
+    }
+  };
 
   return (
     <>
@@ -79,10 +93,7 @@ function Result() {
               type="file"
               id="fileInput"
               style={{ display: "none" }}
-              onChange={(event) => {
-                setFile(event.target.files[0]);
-                setFilename(event.target.files[0].name);
-              }}
+              onChange={handleFileUpload}
             />
             <ResultBtn
               onClick={() => {

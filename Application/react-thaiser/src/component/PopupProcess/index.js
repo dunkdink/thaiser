@@ -35,7 +35,8 @@ function PopupProcessCard({ onClose, filename, handleUpload, handleSummary }) {
               <Text>{filename}</Text>
               {uploading || loadingSummary ? (
                 <LoaderWrap>
-                  <ClipLoader color={"#ed7966"} loading={true} size={60} />
+                  <ClipLoader color={"#2e307a"} loading={true} size={60} />
+                  <p>Loading...</p>
                 </LoaderWrap>
               ) : (
                 <DropFileBtnWrap>

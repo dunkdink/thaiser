@@ -47,8 +47,13 @@ function DropFile() {
         {
           <DropFileDropzone
             onDrop={(acceptedFiles) => {
-              setFile(acceptedFiles[0]);
-              setFilename(acceptedFiles[0].name);
+              const file = acceptedFiles[0];
+              if (file.type !== "audio/wav") {
+                alert("Please upload a .wav file");
+                return;
+              }
+              setFile(file);
+              setFilename(file.name);
             }}
           >
             {({ getRootProps, getInputProps }) => (
@@ -56,6 +61,7 @@ function DropFile() {
                 <input {...getInputProps()} />
                 <DragContent>
                   <DropFileBtn>อัพโหลดเสียง</DropFileBtn>
+                  <p>.wav เท่านั้น</p>
                 </DragContent>
               </DragWarp>
             )}

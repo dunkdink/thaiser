@@ -74,6 +74,10 @@ export const DragWarp = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 10px 10px 0px 0px;
+  p {
+    margin-top:10px;
+    color: #ed7966;
+  }
 `;
 
 export const DragContent = styled.div``;

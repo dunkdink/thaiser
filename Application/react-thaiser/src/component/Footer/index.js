@@ -19,7 +19,10 @@ const Footer = () => {
             <FooterLinkItems>
               <FooterLinkTitle>เกี่ยวกับเรา</FooterLinkTitle>
               <FooterA href="https://github.com/dunkdink" target="_blank">
-                Git Hub
+                Git Hub Piyaphat
+              </FooterA>
+              <FooterA href="https://github.com/blxsheep" target="_blank">
+                Git Hub Voranipit
               </FooterA>
               <FooterA href="https://www.ce.kmitl.ac.th/" target="_blank">
                 CE KMITL

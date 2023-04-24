@@ -79,7 +79,7 @@ function History() {
 
   async function fetchTableData() {
     setLoading(true);
-    const URL = `http://127.0.0.1:8000/history?username=${user.username}`;
+    const URL = `http://api.ce32.ce.kmitl.cloud/history?username=${user.username}`;
     const response = await fetch(URL);
 
     const users = await response.json();
